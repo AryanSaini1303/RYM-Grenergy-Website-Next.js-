@@ -1,9 +1,13 @@
+'use client';
+
 import Navbar from '@/components/Navbar';
 import styles from './page.module.css';
 import Image from 'next/image';
 import { ArrowRightUp } from '@/components/Arrow';
+import { useState } from 'react';
 
 export default function Home() {
+  const [isHoveringProducts, setIsHoveringProducts] = useState(null);
   return (
     <div className="wrapper">
       <Navbar />
@@ -72,7 +76,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className={styles.specialitiesSection} id='products'>
+      <section className={styles.specialitiesSection}>
         <div className={styles.tab}>
           <div className={styles.infoContainer}>
             <h1>
@@ -82,7 +86,7 @@ export default function Home() {
               Building the future of clean energy through AI, IOT, and smart
               automation-powering a more efficent and sustainble world.
             </p>
-            <button>Know more</button>
+            <button className={styles.knowMoreBtn}>Know more</button>
           </div>
           <div className={styles.imageContainer}>
             <Image
@@ -102,7 +106,7 @@ export default function Home() {
               Advancing sustainable power through AI, IOT, and intelligent
               automation for a smarter, greener future.
             </p>
-            <button>Know more</button>
+            <button className={styles.knowMoreBtn}>Know more</button>
           </div>
           <div className={styles.imageContainer}>
             <Image
@@ -114,7 +118,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={styles.partnerContainer} id='clients'>
+      <section className={styles.partnerContainer} id="clients">
         <div>
           <Image
             src={'/images/gd goenka.png'}
@@ -147,6 +151,101 @@ export default function Home() {
             height={2000}
           />
         </div>
+      </section>
+      <section className={styles.products} id="products">
+        <h1>Featured Products</h1>
+        <div className={styles.cardContainer}>
+          <div
+            onMouseEnter={() => {
+              setIsHoveringProducts(0);
+            }}
+            onMouseLeave={() => {
+              setIsHoveringProducts(null);
+            }}
+          >
+            <h1>Ultron</h1>
+            <div className={styles.imageContainer}>
+              <Image
+                src={'/images/product2.jpeg'}
+                alt="product"
+                width={2000}
+                height={2000}
+              />
+              {isHoveringProducts === 0 && (
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Earum ipsum reprehenderit blanditiis iure eius, dicta
+                  dignissimos explicabo. Earum fuga placeat cupiditate, nulla,
+                  non accusantium numquam aliquam consequatur dicta nobis veniam
+                  totam ipsa voluptate laudantium a fugit, molestias laborum
+                  blanditiis veritatis!
+                </p>
+              )}
+            </div>
+            <button className={styles.knowMoreBtn}>Know More</button>
+          </div>
+          <div
+            onMouseEnter={() => {
+              setIsHoveringProducts(1);
+            }}
+            onMouseLeave={() => {
+              setIsHoveringProducts(null);
+            }}
+          >
+            <h1>AI-Drive Through</h1>
+            <div className={styles.imageContainer}>
+              <Image
+                src={'/images/product1.jpeg'}
+                alt="product"
+                width={2000}
+                height={2000}
+              />
+              {isHoveringProducts === 1 && (
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Earum ipsum reprehenderit blanditiis iure eius, dicta
+                  dignissimos explicabo. Earum fuga placeat cupiditate, nulla,
+                  non accusantium numquam aliquam consequatur dicta nobis veniam
+                  totam ipsa voluptate laudantium a fugit, molestias laborum
+                  blanditiis veritatis!
+                </p>
+              )}
+            </div>
+            <button className={styles.knowMoreBtn}>Know More</button>
+          </div>
+          <div
+            onMouseEnter={() => {
+              setIsHoveringProducts(2);
+            }}
+            onMouseLeave={() => {
+              setIsHoveringProducts(null);
+            }}
+          >
+            <h1>EWS</h1>
+            <div className={styles.imageContainer}>
+              <Image
+                src={'/images/product1.jpeg'}
+                alt="product"
+                width={2000}
+                height={2000}
+              />
+              {isHoveringProducts === 2 && (
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Earum ipsum reprehenderit blanditiis iure eius, dicta
+                  dignissimos explicabo. Earum fuga placeat cupiditate, nulla,
+                  non accusantium numquam aliquam consequatur dicta nobis veniam
+                  totam ipsa voluptate laudantium a fugit, molestias laborum
+                  blanditiis veritatis!
+                </p>
+              )}
+            </div>
+            <button className={styles.knowMoreBtn}>Know More</button>
+          </div>
+        </div>
+        <button className={styles.shopBtn}>
+          Shop All <ArrowRightUp />
+        </button>
       </section>
     </div>
   );

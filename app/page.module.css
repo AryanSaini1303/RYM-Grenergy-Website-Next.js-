@@ -22,7 +22,8 @@
   font-weight: 100;
   font-size: 0.9rem;
 }
-.overlayContent button {
+.overlayContent button,
+.products button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   background-color: var(--highlight-color);
@@ -77,23 +78,28 @@
   );
   backdrop-filter: blur(2px);
 }
-.overlayContent button:hover > svg {
+.overlayContent button:hover > svg,
+.products button:hover > svg {
   transform: rotate(45deg);
   transition: transform 0.2s ease-in-out;
 }
-.overlayContent button:active {
+.overlayContent button:active,
+.products button:active {
   transition: all 0.2s ease-in-out;
   /* border: white solid 1px; */
   color: white;
   background-color: black;
 }
-.overlayContent button:active > svg {
+.overlayContent button:active > svg,
+.products button:active > svg {
   transform: rotate(45deg) translateX(0.7rem) translateY(-0.7rem);
 }
-.overlayContent button:active {
+.overlayContent button:active,
+.products button:active {
   border-right: solid 1.5px white;
 }
-.overlayContent button:active > svg g {
+.overlayContent button:active > svg g,
+.products button:active > svg g {
   stroke: white;
 }
 .aboutSection {
@@ -153,6 +159,8 @@
   line-height: 1.5rem;
   width: 85%;
   font-style: italic;
+  text-align: justify;
+  transition: all 0.2s ease-in-out;
 }
 .statsContainer {
   display: grid;
@@ -235,7 +243,7 @@
   font-style: normal;
   transform: rotate(-10deg) translateY(-2rem);
 }
-.specialitiesSection .tab .infoContainer button {
+.knowMoreBtn {
   background-color: rgba(255, 255, 255, 0);
   border: solid var(--highlight-color);
   padding: 0.3rem 0.5rem;
@@ -244,7 +252,7 @@
 .specialitiesSection .tab:last-child {
   flex-direction: row-reverse;
 }
-.specialitiesSection .tab .infoContainer button {
+.knowMoreBtn {
   display: inline-block;
   padding: 0.3rem 0.5rem;
   border: 1px solid var(--highlight-color);
@@ -257,7 +265,7 @@
   color: black;
   z-index: 1;
 }
-.specialitiesSection .tab .infoContainer button:before {
+.knowMoreBtn:before {
   content: '';
   position: absolute;
   left: 50%;
@@ -271,7 +279,7 @@
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: -1;
 }
-.specialitiesSection .tab .infoContainer button:after {
+.knowMoreBtn:after {
   content: '';
   position: absolute;
   left: 55%;
@@ -285,26 +293,26 @@
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: -1;
 }
-.specialitiesSection .tab .infoContainer button:hover {
+.knowMoreBtn:hover {
   color: #ffffff;
   border: 1px solid #39bda7;
 }
-.specialitiesSection .tab .infoContainer button:hover:before {
+.knowMoreBtn:hover:before {
   top: -35%;
   background-color: #39bda7;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
-.specialitiesSection .tab .infoContainer button:hover:after {
+.knowMoreBtn:hover:after {
   top: -45%;
   background-color: #39bda7;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
-.specialitiesSection .tab .infoContainer button:active {
+.knowMoreBtn:active {
   opacity: 0.8;
   transform: scale(0.98);
 }
 .partnerContainer {
-  margin: 5rem 0;
+  margin: 2.5rem 0;
   padding: 0rem 4rem;
   display: flex;
   justify-content: space-between;
@@ -314,4 +322,95 @@
 .partnerContainer div img {
   height: auto;
   width: 14rem;
+}
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: black;
+  padding: 2.5rem 4rem;
+}
+.products .cardContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  overflow: hidden;
+}
+.products .cardContainer div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  padding: 0.8rem 0.5rem;
+  border-radius: var(--btn-radius);
+  align-items: center;
+}
+.products .cardContainer div .imageContainer {
+  height: 24rem;
+  width: 24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+  padding: 0;
+}
+.products .cardContainer div img {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--btn-radius);
+}
+.products .cardContainer div button {
+  width: fit-content;
+  margin: 0 0 0.25rem auto;
+  background-color: white;
+  animation: none;
+}
+.products h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.products .cardContainer div h1 {
+  color: black;
+  font-size: 1.5rem;
+  margin: 0 auto 0 0;
+}
+.products .cardContainer div p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  /* margin: 0 0.25rem; */
+  text-align: justify;
+  animation: infoReveal 0.3s ease-in-out;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+@keyframes infoReveal {
+  0% {
+    /* opacity: 0; */
+    transform: translateY(5rem);
+  }
+  100% {
+    /* opacity: 1; */
+    transform: translateY(0rem);
+  }
+}
+.shopBtn {
+  background-color: var(--highlight-color);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  margin-left: auto;
 }
