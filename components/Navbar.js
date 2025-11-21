@@ -16,13 +16,13 @@ export default function Navbar() {
           <Link href="/">Home</Link>
         </li>
         <li className={url == '/about' ? styles.active : null}>
-          <Link href="/about">About</Link>
+          <Link href="#about">About</Link>
         </li>
         <li className={url == '/products' ? styles.active : null}>
-          <Link href="/products">Products</Link>
+          <Link href="#products">Products</Link>
         </li>
         <li className={url == '/clients' ? styles.active : null}>
-          <Link href="/clients">Clients</Link>
+          <Link href="#clients">Clients</Link>
         </li>
         <li className={url == '/contact' ? styles.active : null}>
           <Link href="/contact">Contact</Link>

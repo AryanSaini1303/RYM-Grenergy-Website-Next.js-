@@ -26,7 +26,7 @@ export default function Home() {
           height={10000}
         />
       </section>
-      <section className={styles.aboutSection}>
+      <section className={styles.aboutSection} id="about">
         <div className={styles.infoContainer}>
           <h1>About Us</h1>
           <p>
@@ -72,7 +72,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className={styles.specialitiesSection}>
+      <section className={styles.specialitiesSection} id='products'>
         <div className={styles.tab}>
           <div className={styles.infoContainer}>
             <h1>
@@ -114,7 +114,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={styles.partnerContainer}>
+      <section className={styles.partnerContainer} id='clients'>
         <div>
           <Image
             src={'/images/gd goenka.png'}
