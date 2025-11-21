@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  align-items: center;
+}
+.tabs {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.tabs li a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+.tabs li a:hover {
+  color: var(--highlight-color);
+}
+.tabs li a:active {
+  color: var(--active-highlight-color);
+}
+.tabs li {
+  position: relative;
+  padding: 3px 0;
+}
+.btnContainer {
+  display: flex;
+  gap: 1rem;
+}
+.btnContainer button {
+  background-color: white;
+  border: solid 1px black;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  border-radius: var(--btn-radius);
+  transition: all 0.2s ease-in-out;
+}
+.btnContainer button a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+}
+.btnContainer button:last-child {
+  background-color: var(--highlight-color);
+}
+.btnContainer button:hover {
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.706);
+  transform: translateY(-2px);
+}
+.btnContainer button:active {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.706);
+  transform: translateY(0);
+}
+.active::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background-color: var(--highlight-color);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+}
