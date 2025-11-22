@@ -1,0 +1,127 @@
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  padding-bottom: 10rem;
+}
+.projectContainer > h1 {
+  font-size: 4rem;
+  position: relative;
+  width: fit-content;
+  font-weight: 350;
+  margin: 2.5rem 4rem 15rem 4rem;
+}
+.projectContainer > h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 5px;
+  width: 50%;
+  background-color: var(--highlight-color);
+}
+.projectContainer .chartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.chartContainer .firstSection,
+.chartContainer .secondSection {
+  display: flex;
+  gap: 2rem;
+  margin: 0 4rem;
+  justify-content: space-between;
+}
+.chartContainer .secondSection {
+  justify-content: space-evenly;
+}
+.chartContainer .firstSection > div,
+.chartContainer .secondSection > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+  position: relative;
+}
+.chartContainer .row div h1 {
+  font-size: 1.5rem;
+}
+.chartContainer .row div p {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: grey;
+}
+.firstSection div:nth-child(1) {
+  transform: translateY(-12.5rem);
+}
+.row h1 {
+  width: 50%;
+}
+.firstSection div:nth-child(3) {
+  transform: translateY(-10rem);
+}
+.secondSection div:nth-child(2) {
+  transform: translateY(7.5rem);
+}
+.secondSection div:nth-child(3) {
+  transform: translateY(0.5rem);
+}
+.firstSection div div,
+.secondSection div div {
+  position: absolute;
+  height: 5rem;
+  width: 1.5px;
+  background-color: rgb(47, 47, 47);
+}
+.firstSection div div::after,
+.secondSection div div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.4rem;
+  width: 0.4rem;
+  border-radius: 50%;
+  background-color: var(--highlight-color);
+}
+.firstSection div:nth-child(1) div {
+  top: 13.5rem;
+  left: 0;
+  height: 18rem;
+  /* display: none; */
+}
+.firstSection div:nth-child(2) div {
+  top: 12rem;
+  left: -1rem;
+  height: 7rem;
+}
+.firstSection div:nth-child(3) div {
+  top: 12rem;
+  left: -1rem;
+  height: 17em;
+}
+.firstSection div:nth-child(4) div {
+  top: 13rem;
+  left: -1rem;
+  height: 6rem;
+}
+.secondSection div:nth-child(1) div {
+  bottom: 2.3rem;
+  left: -1rem;
+  height: 5rem;
+  transform: rotate(180deg);
+}
+.secondSection div:nth-child(2) div {
+  bottom: 1.5rem;
+  left: -1rem;
+  height: 11.5rem;
+  transform: rotate(180deg);
+}
+.secondSection div:nth-child(3) div {
+  bottom: 2.3rem;
+  left: -1rem;
+  height: 5.5rem;
+  transform: rotate(180deg);
+}

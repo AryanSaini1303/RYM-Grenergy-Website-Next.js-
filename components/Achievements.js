@@ -11,7 +11,7 @@ export default function Achievements() {
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/img1.jpeg'}
+              src={'/images/kpit.png'}
               width={2000}
               height={2000}
               alt="Achievement Image"
@@ -30,7 +30,7 @@ export default function Achievements() {
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/img1.jpeg'}
+              src={'/images/journey.png'}
               width={2000}
               height={2000}
               alt="Achievement Image"
@@ -44,7 +44,7 @@ export default function Achievements() {
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/img1.jpeg'}
+              src={'/images/ultron.jpeg'}
               width={2000}
               height={2000}
               alt="Achievement Image"
@@ -58,7 +58,7 @@ export default function Achievements() {
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/img1.jpeg'}
+              src={'/images/innovation.jpg'}
               width={2000}
               height={2000}
               alt="Achievement Image"
