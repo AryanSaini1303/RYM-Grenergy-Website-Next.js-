@@ -173,12 +173,16 @@ export default function Home() {
               />
               {isHoveringProducts === 0 && (
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Earum ipsum reprehenderit blanditiis iure eius, dicta
-                  dignissimos explicabo. Earum fuga placeat cupiditate, nulla,
-                  non accusantium numquam aliquam consequatur dicta nobis veniam
-                  totam ipsa voluptate laudantium a fugit, molestias laborum
-                  blanditiis veritatis!
+                  Ultron is a next-generation sustainable battery technology
+                  designed to replace conventional lithium-based systems with
+                  safer, greener, and high-performance materials. It delivers
+                  high energy density, rapid turnaround time, and strong cycle
+                  life while eliminating the environmental and ethical issues
+                  tied to lithium and cobalt. Built for EVs and advanced energy
+                  applications, Ultron enables cleaner manufacturing, lower
+                  carbon footprint, and a more resilient supply chain—making it
+                  a transformative alternative for future mobility and power
+                  systems.
                 </p>
               )}
             </div>
@@ -202,12 +206,12 @@ export default function Home() {
               />
               {isHoveringProducts === 1 && (
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Earum ipsum reprehenderit blanditiis iure eius, dicta
-                  dignissimos explicabo. Earum fuga placeat cupiditate, nulla,
-                  non accusantium numquam aliquam consequatur dicta nobis veniam
-                  totam ipsa voluptate laudantium a fugit, molestias laborum
-                  blanditiis veritatis!
+                  AI DriveThrough is an intelligent traffic-optimization system
+                  that guides vehicles at ideal speeds to bypass red lights,
+                  reduce travel time, and cut fuel consumption. By integrating
+                  real-time data, smart routing, and social connectivity
+                  features, it transforms daily commuting into a faster,
+                  smoother, and more efficient experience for urban drivers.
                 </p>
               )}
             </div>
@@ -221,22 +225,23 @@ export default function Home() {
               setIsHoveringProducts(null);
             }}
           >
-            <h1>EWS</h1>
+            <h1>REEWS</h1>
             <div className={styles.imageContainer}>
               <Image
-                src={'/images/product1.jpeg'}
+                src={'/images/product3.png'}
                 alt="product"
                 width={2000}
                 height={2000}
               />
               {isHoveringProducts === 2 && (
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Earum ipsum reprehenderit blanditiis iure eius, dicta
-                  dignissimos explicabo. Earum fuga placeat cupiditate, nulla,
-                  non accusantium numquam aliquam consequatur dicta nobis veniam
-                  totam ipsa voluptate laudantium a fugit, molestias laborum
-                  blanditiis veritatis!
+                  REEWS EQ Alert is a Regional Earthquake Early Warning System
+                  designed to detect seismic activity within seconds and issue
+                  instant alerts to reduce loss of life and infrastructure
+                  damage. Using real-time ground motion sensing, fast data
+                  processing, and automated notification networks, it provides
+                  communities, industries, and critical infrastructure with
+                  precious lead time to take protective action.
                 </p>
               )}
             </div>

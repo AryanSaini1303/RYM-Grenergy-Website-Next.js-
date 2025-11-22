@@ -116,7 +116,7 @@
 }
 .aboutSection img {
   border-radius: var(--img-radius);
-  filter: grayscale();
+  /* filter: grayscale(); */
   height: 100%;
   width: 100%;
   display: block; /* do this to remove the stubborn gap from the bottom of the image*/
@@ -354,7 +354,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  height: fit-content;
+  /* height: fit-content; */
   padding: 0;
 }
 .products .cardContainer div img {
