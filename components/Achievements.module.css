@@ -1,11 +1,23 @@
 .achievements {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 0.5fr; */
+  background-color: black;
+  /* gap: 1.5rem; */
+  padding: 2.5rem 4rem;
+  color: white;
+}
+.gridContainer{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 0.5fr;
-  background-color: black;
   gap: 1.5rem;
-  padding: 2.5rem 4rem;
-  color: white;
+  /* padding: 2.5rem 4rem; */
+}
+.achievements>h1{
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 350;
 }
 .achievements .tabs {
   display: flex;
@@ -61,8 +73,9 @@
 }
 .achievements .tabs:not(:first-child):hover {
   background-color: #222222;
-  box-shadow: inset 0px -5px 8px var(--active-highlight-color);
+  border-bottom: solid 2px white;
   border-radius: 10px;
+  filter: brightness(120%);
 }
 .achievements .tabs:not(:first-child):active {
   filter: grayscale();
