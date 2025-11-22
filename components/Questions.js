@@ -10,9 +10,9 @@ export default function Questions() {
     'What does RYM Grenergy specialize in?',
     'What is Ultron?',
     'How much energy capacity does RYM offer?',
-    'When wasa RYM Gerenrgy founded?',
+    'When was a RYM Grenenrgy founded?',
     'What recognition has RYM received?',
-    'Are RYM products environmentally firendly?',
+    'Are RYM products environmentally friendly?',
   ];
   const para = [
     'RYM Grenergy focueses on developing AI-, IOT-, and ML- powered renewable energy and automation technologies to create smarter, sustainable systems.',
