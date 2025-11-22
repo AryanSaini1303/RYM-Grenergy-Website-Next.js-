@@ -1,15 +1,14 @@
-export function ArrowRightUp(props) {
+export function ArrowRightUp({ color }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
       width="1.3em"
       height="1.3em"
-      {...props}
     >
       <g
         fill="none"
-        stroke="#000"
+        stroke={!color ? '#000' : color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="4"

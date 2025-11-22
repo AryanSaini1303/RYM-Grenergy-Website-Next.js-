@@ -9,6 +9,7 @@ import Achievements from '@/components/Achievements';
 import Testimonials from '@/components/Testimonials';
 import Projects from '@/components/Projects';
 import Goals from '@/components/Goals';
+import Questions from '@/components/Questions';
 
 export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
@@ -260,6 +261,7 @@ export default function Home() {
       <Testimonials />
       <Projects />
       <Goals />
+      <Questions />
     </div>
   );
 }
