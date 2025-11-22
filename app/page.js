@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import { ArrowRightUp } from '@/components/Arrow';
 import { useState } from 'react';
+import Achievements from '@/components/Achievements';
 
 export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
@@ -252,6 +253,7 @@ export default function Home() {
           Shop All <ArrowRightUp />
         </button>
       </section>
+      <Achievements />
     </div>
   );
 }

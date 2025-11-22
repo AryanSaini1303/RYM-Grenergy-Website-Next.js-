@@ -1,0 +1,66 @@
+.shopBtn {
+  background-color: var(--highlight-color);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  margin-left: auto;
+}
+.shopBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--highlight-color);
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: black;
+  border: solid black 1px;
+  border-radius: var(--btn-radius);
+  width: fit-content;
+  font-weight: 350;
+  transition: all 0.2s ease-in-out;
+  animation: btnReveal 1s ease-in-out;
+}
+@keyframes btnReveal {
+  0% {
+    /* opacity: 0; */
+    border-radius: 10px;
+    transform: translateY(5rem) rotate(5deg);
+  }
+  50% {
+    /* opacity: 0.5; */
+    border-radius: 5px;
+    transform: translateY(-1.5rem) rotate(-5deg);
+  }
+  100% {
+    /* opacity: 1; */
+    border-radius: var(--btn-radius);
+    transform: translateY(0rem);
+  }
+}
+.shopBtn:hover > svg {
+  transform: rotate(45deg);
+  transition: transform 0.2s ease-in-out;
+}
+.shopBtn:active {
+  transition: all 0.2s ease-in-out;
+  /* border: white solid 1px; */
+  color: white;
+  background-color: black;
+}
+.shopBtn:active > svg {
+  transform: rotate(45deg) translateX(0.7rem) translateY(-0.7rem);
+}
+.shopBtn:active {
+  border-right: solid 1.5px white;
+}
+.shopBtn:active > svg g {
+  stroke: white;
+}

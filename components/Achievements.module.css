@@ -1,0 +1,142 @@
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 0.5fr;
+  background-color: black;
+  gap: 1.5rem;
+  padding: 2.5rem 4rem;
+  color: white;
+}
+.achievements .tabs {
+  display: flex;
+  gap: 0.5rem;
+  background-color: #171717;
+  height: fit-content;
+}
+.achievements .tabs .imageContainer {
+  width: 100%;
+  height: auto;
+}
+.achievements .tabs .imageContainer img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+  display: block;
+}
+.achievements .infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.3rem;
+}
+.achievements .infoContainer h5 {
+  color: var(--highlight-color);
+}
+.achievements .infoContainer h1 {
+  width: 50%;
+  font-weight: 550;
+  font-size: 1.8rem;
+}
+.achievements .tabs:not(:first-child) .infoContainer h1 {
+  width: 60%;
+  font-size: 1.2rem;
+}
+.achievements .infoContainer p {
+  margin: 2rem 0;
+  width: 80%;
+  text-align: justify;
+  color: #838383;
+  font-style: italic;
+}
+.achievements .tabs:first-child {
+  grid-area: 1/1/1/4;
+}
+.achievements .tabs:not(:first-child) {
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.achievements .tabs:not(:first-child):hover {
+  background-color: #222222;
+  box-shadow: inset 0px -5px 8px var(--active-highlight-color);
+  border-radius: 10px;
+}
+.achievements .tabs:not(:first-child):active {
+  filter: grayscale();
+  transform: scale(0.95);
+  /* background-color: #222222;
+  box-shadow: inset 0px -5px 8px var(--active-highlight-color);
+  border-radius: 10px; */
+}
+.knowMoreBtn {
+  background-color: rgba(255, 255, 255, 0);
+  border: solid var(--highlight-color);
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+.knowMoreBtn {
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--highlight-color);
+  transition: all 0.2s ease-in;
+  border-radius: var(--btn-radius);
+  position: relative;
+  font-size: 0.8rem;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+}
+.knowMoreBtn:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.knowMoreBtn:after {
+  content: '';
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.knowMoreBtn:hover {
+  color: #ffffff;
+  border: 1px solid #39bda7;
+}
+.knowMoreBtn:hover:before {
+  top: -35%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.knowMoreBtn:hover:after {
+  top: -45%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.knowMoreBtn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+.btn {
+  grid-area: 3/1/3/4;
+  margin: auto;
+}
