@@ -166,7 +166,7 @@ export default function Home() {
             <h1>Ultron</h1>
             <div className={styles.imageContainer}>
               <Image
-                src={'/images/product2.jpeg'}
+                src={'/images/product4.jpeg'}
                 alt="product"
                 width={2000}
                 height={2000}

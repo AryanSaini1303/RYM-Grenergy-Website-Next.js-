@@ -331,8 +331,9 @@
   padding: 2.5rem 4rem;
 }
 .products .cardContainer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  /* justify-content: space-between; */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: center;
   overflow: hidden;
