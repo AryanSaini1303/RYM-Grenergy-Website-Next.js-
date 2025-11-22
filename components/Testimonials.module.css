@@ -1,0 +1,90 @@
+.testimonialContainer {
+  padding: 2.5rem 4rem;
+  background-color: black;
+  color: white;
+}
+.testimonialContainer > header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5rem 1rem 5rem;
+  font-size: 1.2rem;
+}
+.testimonialContainer > header h1 {
+  font-weight: 350;
+}
+.testimonialContainer header h1:nth-child(2) {
+  color: var(--highlight-color);
+  font-family: 'Dancing Script', cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.testimonialContainer .gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem 6rem;
+  position: relative;
+}
+.testimonialContainer .gridContainer .tabs {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--img-radius);
+}
+.testimonialContainer .gridContainer .tabs .imageContainer {
+  width: 100%;
+  height: auto;
+}
+.testimonialContainer .gridContainer .tabs .imageContainer img {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--img-radius);
+  display: block;
+  object-fit: cover;
+}
+.testimonialContainer .gridContainer .tabs .infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: #171717;
+}
+.testimonialContainer .gridContainer .tabs .infoContainer header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 0.8rem;
+}
+.infoContainer h1 {
+  font-size: 1.3rem;
+}
+.infoContainer h3 {
+  font-size: 0.8rem;
+}
+.testimonialContainer .gridContainer .tabs .infoContainer header p:first-child {
+  color: var(--highlight-color);
+}
+.testimonialContainer
+  .gridContainer
+  .tabs
+  .infoContainer
+  header
+  p:not(:first-child) {
+  color: grey;
+}
+.testimonialContainer .gridContainer .tabs .infoContainer .para {
+  color: grey;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.gridContainer .tabs:nth-child(2),
+.tabs:nth-child(5) {
+  transform: translateY(-5rem);
+}
+.btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

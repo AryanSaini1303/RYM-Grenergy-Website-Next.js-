@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowRightUp } from '@/components/Arrow';
 import { useState } from 'react';
 import Achievements from '@/components/Achievements';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
@@ -254,6 +255,7 @@ export default function Home() {
         </button>
       </section>
       <Achievements />
+      <Testimonials />
     </div>
   );
 }
