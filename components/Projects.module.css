@@ -43,6 +43,7 @@
   justify-content: center;
   height: fit-content;
   position: relative;
+  gap: 0.5rem;
 }
 .chartContainer .row div h1 {
   font-size: 1.5rem;
@@ -87,41 +88,40 @@
   background-color: var(--highlight-color);
 }
 .firstSection div:nth-child(1) div {
-  top: 13.5rem;
+  top: 14rem;
   left: 0;
   height: 18rem;
-  /* display: none; */
 }
 .firstSection div:nth-child(2) div {
   top: 12rem;
   left: -1rem;
-  height: 7rem;
+  height: 7.5rem;
 }
 .firstSection div:nth-child(3) div {
   top: 12rem;
   left: -1rem;
-  height: 17em;
+  height: 17.5em;
 }
 .firstSection div:nth-child(4) div {
   top: 13rem;
   left: -1rem;
-  height: 6rem;
+  height: 6.5rem;
 }
 .secondSection div:nth-child(1) div {
   bottom: 2.3rem;
   left: -1rem;
-  height: 5rem;
+  height: 5.5rem;
   transform: rotate(180deg);
 }
 .secondSection div:nth-child(2) div {
   bottom: 1.5rem;
   left: -1rem;
-  height: 11.5rem;
+  height: 12rem;
   transform: rotate(180deg);
 }
 .secondSection div:nth-child(3) div {
   bottom: 2.3rem;
   left: -1rem;
-  height: 5.5rem;
+  height: 6rem;
   transform: rotate(180deg);
 }
