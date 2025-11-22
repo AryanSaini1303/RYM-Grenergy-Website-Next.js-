@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Achievements from '@/components/Achievements';
 import Testimonials from '@/components/Testimonials';
 import Projects from '@/components/Projects';
+import Goals from '@/components/Goals';
 
 export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
@@ -258,6 +259,7 @@ export default function Home() {
       <Achievements />
       <Testimonials />
       <Projects />
+      <Goals />
     </div>
   );
 }

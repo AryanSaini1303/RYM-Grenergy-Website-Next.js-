@@ -1,0 +1,58 @@
+.goalContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  padding: 2.5rem 12rem;
+  background-color: black;
+  color: white;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.infoContainer p {
+  font-style: italic;
+  color: grey;
+  font-size: 0.8rem;
+}
+.infoContainer header {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  gap: 0.5rem;
+}
+.infoContainer header::after {
+  position: absolute;
+  content: '';
+  height: 8px;
+  width: 45%;
+  background-color: var(--highlight-color);
+  bottom: 0;
+  right: 0;
+}
+.infoContainer header h1 {
+  font-size: 6rem;
+}
+.infoContainer header h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.infoContainer {
+  width: 100%;
+}
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.imageContainer img {
+  height: 8vw;
+  width: 8vw;
+}
