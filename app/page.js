@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import styles from './page.module.css';
 import Image from 'next/image';
 import { ArrowRightUp } from '@/components/Arrow';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Achievements from '@/components/Achievements';
 import Testimonials from '@/components/Testimonials';
 import Projects from '@/components/Projects';
@@ -12,9 +12,25 @@ import Goals from '@/components/Goals';
 import Questions from '@/components/Questions';
 import GetInTouch from '@/components/GetInTouch';
 import Footer from '@/components/Footer';
+import MobileBlocker from '@/components/MobileBlocker';
 
 export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < 1100);
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  if (isMobile) {
+    return <MobileBlocker />;
+  }
+  
   return (
     <div className="wrapper">
       <Navbar />

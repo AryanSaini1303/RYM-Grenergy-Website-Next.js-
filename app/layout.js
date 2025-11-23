@@ -1,4 +1,3 @@
-import MobileBlocker from '@/components/MobileBlocker';
 import './globals.css';
 
 export const metadata = {
@@ -10,7 +9,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <MobileBlocker />
         {children}
       </body>
     </html>
