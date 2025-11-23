@@ -1,0 +1,119 @@
+.footerContainer {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 5fr 1fr;
+  gap: 4rem;
+  background-color: black;
+  padding: 2.5rem 4rem;
+  color: rgb(208, 208, 208);
+}
+.footerContainer a {
+  color: rgb(208, 208, 208);
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  transition: all 0.2s ease-in-out;
+}
+.footerContainer a:hover {
+  color: var(--highlight-color);
+  text-decoration: underline;
+}
+.footerContainer a:active {
+  transform: scale(0.98);
+}
+.leftSection {
+  grid-area: 1/1/1/1;
+  display: flex;
+  flex-direction: column;
+}
+.leftSection .paraContainer * {
+  font-style: italic;
+}
+.leftSection img {
+  height: auto;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+.leftSection .paraContainer p:nth-child(1) {
+  margin-bottom: 0.5rem;
+}
+.leftSection .paraContainer p:nth-child(2) {
+  font-size: 0.9rem;
+}
+.leftSection .paraContainer p:nth-child(3) {
+  margin: 5rem 0;
+  font-size: 0.9rem;
+}
+.leftSection .logoContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftSection .logoContainer a svg {
+  cursor: pointer;
+}
+.leftSection .logoContainer a svg g,
+.leftSection .logoContainer a svg path {
+  transition: all 0.2s ease-in-out;
+}
+.leftSection .logoContainer a:nth-child(3) svg{
+  filter: grayscale(100%);
+  transition: all 0.2s ease-in-out;
+}
+.leftSection .logoContainer a:nth-child(3):hover svg{
+  filter: none;
+}
+.leftSection .logoContainer a:nth-child(1):hover > svg path {
+  fill: #1877f2;
+}
+.leftSection .logoContainer a:nth-child(5):hover > svg g {
+  fill: #0077b5;
+}
+.leftSection .logoContainer a:nth-child(4):hover > svg path {
+  fill: red;
+}
+.leftSection .logoContainer a:nth-child(6):hover > svg path {
+  fill: #25d366;
+}
+.leftSection .logoContainer a:active svg{
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+.leftSection .logoContainer a:nth-child(2):hover > svg path {
+  fill: black;
+  stroke: white;
+  stroke-width: 0.5px;
+}
+.rightSection {
+  grid-area: 1/2/1/2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.rightSection .tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.rightSection .tabs ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0;
+  list-style-type: none;
+}
+.bottomSection {
+  grid-area: 2/1/2/3;
+}
+.bottomSection ul {
+  display: flex;
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+.tabs h5 {
+  font-weight: 600;
+}
