@@ -1,10 +1,10 @@
 .footerContainer {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 5fr 1fr;
+  grid-template-rows: 5fr 0.5fr;
   gap: 4rem;
   background-color: black;
-  padding: 2.5rem 4rem;
+  padding: 2.5rem 4rem 0 2.5rem;  
   color: rgb(208, 208, 208);
 }
 .footerContainer a {

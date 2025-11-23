@@ -70,7 +70,7 @@
   flex-direction: column;
   height: 100%;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .achievements .tabs:not(:first-child):hover {
   background-color: #222222;
@@ -79,8 +79,9 @@
   filter: brightness(120%);
 }
 .achievements .tabs:not(:first-child):active {
-  filter: grayscale();
-  transform: scale(0.95);
+  /* filter: grayscale(); */
+  transform: scale(0.98);
+  opacity: 0.8;
   /* background-color: #222222;
   box-shadow: inset 0px -5px 8px var(--active-highlight-color);
   border-radius: 10px; */
