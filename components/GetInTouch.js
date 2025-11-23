@@ -7,6 +7,7 @@ export default function GetInTouch() {
     phone: '',
     email: '',
   });
+  const [loading, setLoading] = useState(false);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -16,18 +17,58 @@ export default function GetInTouch() {
     }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
+    setLoading(true);
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-    });
+    if (formData.phone.length !== 10 || !parseInt(formData.phone)) {
+      alert('Please enter a valid 10 digit number!');
+      setLoading(false);
+      return;
+    }
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        if (data.error.includes('duplicate')) {
+          alert(
+            "You are already in our contact list, we'll get in touch soon :)",
+          );
+        } else {
+          console.error('Error:', data.error);
+          alert(`Server Error: ${data.error}`);
+        }
+        setLoading(false);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+        });
+        return;
+      }
+      // console.log('Success:', data);
+      // Reset form after success
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+      });
+      alert("Your details are recorded successfully!, we'll contact soon :)");
+      setLoading(false);
+    } catch (err) {
+      console.error('Request failed:', err);
+      alert('Something went wrong. Please try again.');
+      setLoading(false);
+    }
   }
 
   return (
-    <section className={styles.GetInTouchSection}>
+    <section className={styles.GetInTouchSection} id="contact">
       <div className={styles.infoContainer}>
         <h1>Get In Touch With Us!</h1>
         <p>
@@ -46,7 +87,7 @@ export default function GetInTouch() {
             id="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder='Name *'
+            placeholder="Name *"
           />
           {/* <label htmlFor="phone"></label> */}
           <input
@@ -56,7 +97,7 @@ export default function GetInTouch() {
             id="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder='Phone Number *'
+            placeholder="Phone Number *"
           />
           {/* <label htmlFor="email"></label> */}
           <input
@@ -66,9 +107,11 @@ export default function GetInTouch() {
             id="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder='Email *'
+            placeholder="Email *"
           />
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Submitting...' : 'Submit'}
+          </button>
 
           <p className={styles.disclaimer}>
             By clicking on "Submit" you are agreeing to our Privacy Policy and

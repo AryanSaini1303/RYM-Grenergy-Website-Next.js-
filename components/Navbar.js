@@ -25,7 +25,7 @@ export default function Navbar() {
           <Link href="#clients">Clients</Link>
         </li>
         <li className={url == '/contact' ? styles.active : null}>
-          <Link href="/contact">Contact</Link>
+          <Link href="#contact">Contact</Link>
         </li>
       </ul>
       <section className={styles.btnContainer}>

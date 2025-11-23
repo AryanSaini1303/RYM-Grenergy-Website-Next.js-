@@ -31,7 +31,7 @@
 }
 .formContainer button {
   background-color: var(--highlight-color);
-  padding: 1rem;
+  padding: 1.5rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border: none;
@@ -46,6 +46,10 @@
   transform: scale(0.98);
 }
 .formContainer input {
-  padding: 1rem;
+  font-size: 0.9rem;
+  padding: 1.5rem;
   width: 100%;
+}
+.formContainer input::placeholder {
+  font-style: italic;
 }
