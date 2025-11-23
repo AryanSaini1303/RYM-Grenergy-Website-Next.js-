@@ -11,6 +11,7 @@ import Projects from '@/components/Projects';
 import Goals from '@/components/Goals';
 import Questions from '@/components/Questions';
 import GetInTouch from '@/components/GetInTouch';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
@@ -264,6 +265,7 @@ export default function Home() {
       <Goals />
       <Questions />
       <GetInTouch />
+      <Footer />
     </div>
   );
 }

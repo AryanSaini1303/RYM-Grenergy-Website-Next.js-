@@ -164,10 +164,11 @@
 }
 .statsContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
   /* place-content: center; */
   margin: 0 4rem;
   gap: 10rem;
+  flex-wrap: wrap;
 }
 .statsContainer .col {
   display: flex;
@@ -336,7 +337,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: center;
-  overflow: hidden;
+  overflow: auto;
+  flex-wrap: wrap;
 }
 .products .cardContainer div {
   display: flex;
