@@ -13,7 +13,7 @@ export default function Testimonials() {
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/product1.jpeg'}
+              src={'/images/Anandita.jpeg'}
               alt={'testimonials'}
               width={2000}
               height={20000}
@@ -22,21 +22,21 @@ export default function Testimonials() {
           <div className={styles.infoContainer}>
             <header>
               <p>GD Goenka</p>
-              <p>17th May, 2025</p>
+              <p>12 March 2024</p>
             </header>
             <h1>Dr. Anindita Roy</h1>
             <h3>Assistant Dean</h3>
             <p className={styles.para}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-              numquam ad qui consequuntur animi, temporibus pariatur quibusdam
-              velit quos. Quisquam.
+              The level of professionalism and technical mastery Rym Grenergy
+              brings is unmatched. They delivered exactly what they promised—and
+              more.
             </p>
           </div>
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/product1.jpeg'}
+              src={'/images/devam.jpg'}
               alt={'testimonials'}
               width={2000}
               height={20000}
@@ -45,21 +45,20 @@ export default function Testimonials() {
           <div className={styles.infoContainer}>
             <header>
               <p>GD Goenka</p>
-              <p>17th May, 2025</p>
+              <p>28 July 2023</p>
             </header>
-            <h1>Dr. Anindita Roy</h1>
-            <h3>Assistant Dean</h3>
+            <h1>Devam Srivastava</h1>
+            <h3>CEO</h3>
             <p className={styles.para}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-              numquam ad qui consequuntur animi, temporibus pariatur quibusdam
-              velit quos. Quisquam.
+              We&apos;ve never worked with a team this committed to excellence.
+              Their solutions are reliable, futuristic, and built to scale.
             </p>
           </div>
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/product1.jpeg'}
+              src={'/images/gaurav.jpg'}
               alt={'testimonials'}
               width={2000}
               height={20000}
@@ -68,21 +67,21 @@ export default function Testimonials() {
           <div className={styles.infoContainer}>
             <header>
               <p>GD Goenka</p>
-              <p>17th May, 2025</p>
+              <p>5 November 2022</p>
             </header>
-            <h1>Dr. Anindita Roy</h1>
-            <h3>Assistant Dean</h3>
+            <h1>Gaurav Minda</h1>
+            <h3>CEO</h3>
             <p className={styles.para}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-              numquam ad qui consequuntur animi, temporibus pariatur quibusdam
-              velit quos. Quisquam.
+              Rym Grenergy transformed our energy systems with precision and
+              innovation. Their tech-first approach saved us both time and
+              money.
             </p>
           </div>
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/product1.jpeg'}
+              src={'/images/apeksha.jpg'}
               alt={'testimonials'}
               width={2000}
               height={20000}
@@ -91,21 +90,21 @@ export default function Testimonials() {
           <div className={styles.infoContainer}>
             <header>
               <p>GD Goenka</p>
-              <p>17th May, 2025</p>
+              <p>19 January 2025</p>
             </header>
-            <h1>Dr. Anindita Roy</h1>
-            <h3>Assistant Dean</h3>
+            <h1>Dr. Apeksha Mittal</h1>
+            <h3>Associate Professor</h3>
             <p className={styles.para}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-              numquam ad qui consequuntur animi, temporibus pariatur quibusdam
-              velit quos. Quisquam.
+              Rym Grenergy doesn&apos;t just solve problems—they redefine
+              what&apos;s possible. Working with them has been a complete
+              game-changer.
             </p>
           </div>
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/product1.jpeg'}
+              src={'/images/dh.jpeg'}
               alt={'testimonials'}
               width={2000}
               height={20000}
@@ -113,22 +112,21 @@ export default function Testimonials() {
           </div>
           <div className={styles.infoContainer}>
             <header>
-              <p>GD Goenka</p>
-              <p>17th May, 2025</p>
+              <p>BWorth</p>
+              <p>3 September 2023</p>
             </header>
-            <h1>Dr. Anindita Roy</h1>
-            <h3>Assistant Dean</h3>
+            <h1>Mr. Dheeraj Anand</h1>
+            <h3>CEO</h3>
             <p className={styles.para}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-              numquam ad qui consequuntur animi, temporibus pariatur quibusdam
-              velit quos. Quisquam.
+              From concept to execution, Rym Grenergy made everything seamless.
+              Their attention to detail truly sets them apart.
             </p>
           </div>
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/product1.jpeg'}
+              src={'/images/adi.png'}
               alt={'testimonials'}
               width={2000}
               height={20000}
@@ -136,15 +134,15 @@ export default function Testimonials() {
           </div>
           <div className={styles.infoContainer}>
             <header>
-              <p>GD Goenka</p>
-              <p>17th May, 2025</p>
+              <p>InventisLabs</p>
+              <p>4 June 2024</p>
             </header>
-            <h1>Dr. Anindita Roy</h1>
-            <h3>Assistant Dean</h3>
+            <h1>Mr. Arun</h1>
+            <h3>Co - Founder</h3>
             <p className={styles.para}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-              numquam ad qui consequuntur animi, temporibus pariatur quibusdam
-              velit quos. Quisquam.
+              Our operations became dramatically more efficient after partnering
+              with Rym Grenergy. Their technology is as impressive as their
+              support.
             </p>
           </div>
         </div>

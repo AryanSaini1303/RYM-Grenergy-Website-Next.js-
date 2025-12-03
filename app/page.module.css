@@ -1,7 +1,30 @@
+.heroSection {
+  position: relative;
+  height: 91vh;
+}
+
 .heroSection img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: 80% 50%;
 }
+
+.blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.736),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(2px);
+}
+
 .overlayContent {
   position: absolute;
   left: 25%;
@@ -15,13 +38,16 @@
   z-index: 2;
   overflow: hidden;
 }
+
 .overlayContent h1 {
   font-size: 3.5rem;
 }
+
 .overlayContent p {
   font-weight: 100;
   font-size: 0.9rem;
 }
+
 .overlayContent button,
 .products button {
   margin-top: 1rem;
@@ -43,65 +69,35 @@
   transition: all 0.2s ease-in-out;
   animation: btnReveal 1s ease-in-out;
 }
-@keyframes btnReveal {
-  0% {
-    /* opacity: 0; */
-    border-radius: 10px;
-    transform: translateY(5rem) rotate(5deg);
-  }
-  50% {
-    /* opacity: 0.5; */
-    border-radius: 5px;
-    transform: translateY(-1.5rem) rotate(-5deg);
-  }
-  100% {
-    /* opacity: 1; */
-    border-radius: var(--btn-radius);
-    transform: translateY(0rem);
-  }
-}
-.heroSection {
-  position: relative;
-  height: 91vh;
-}
-.blur {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  z-index: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.736),
-    rgba(255, 255, 255, 0)
-  );
-  backdrop-filter: blur(2px);
-}
+
 .overlayContent button:hover > svg,
 .products button:hover > svg {
   transform: rotate(45deg);
   transition: transform 0.2s ease-in-out;
 }
+
 .overlayContent button:active,
 .products button:active {
-  transition: all 0.2s ease-in-out;
-  /* border: white solid 1px; */
+  transition: all 0.2s ease-in-out; /* border: white solid 1px; */
   color: white;
   background-color: black;
 }
+
 .overlayContent button:active > svg,
 .products button:active > svg {
   transform: rotate(45deg) translateX(0.7rem) translateY(-0.7rem);
 }
+
 .overlayContent button:active,
 .products button:active {
   border-right: solid 1.5px white;
 }
+
 .overlayContent button:active > svg g,
 .products button:active > svg g {
   stroke: white;
 }
+
 .aboutSection {
   display: flex;
   justify-content: space-between;
@@ -416,4 +412,72 @@
   gap: 0.5rem;
   width: fit-content;
   margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    height: 80vh;
+  }
+  .overlayContent {
+    left: 35%;
+    width: 55%;
+  }
+  .overlayContent h1 {
+    font-size: 2.8rem;
+  }
+  .overlayContent p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 75vh;
+  }
+  .blur {
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+  .overlayContent {
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    align-items: center;
+  }
+  .overlayContent h1 {
+    font-size: 2.2rem;
+  }
+  .overlayContent p {
+    font-size: 0.85rem;
+  }
+  .overlayContent button,
+  .products button {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    height: 70vh;
+  }
+  .overlayContent {
+    width: 90%;
+  }
+  .overlayContent h1 {
+    font-size: 1.8rem;
+  }
+  .overlayContent p {
+    font-size: 0.8rem;
+  }
+  .overlayContent button,
+  .products button {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+  }
 }

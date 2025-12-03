@@ -16,11 +16,11 @@ export default function Questions() {
   ];
   const para = [
     'RYM Grenergy focueses on developing AI-, IOT-, and ML- powered renewable energy and automation technologies to create smarter, sustainable systems.',
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius aspernatur nostrum doloribus itaque ducimus ipsum porro molestiae quam consequatur numquam?',
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius aspernatur nostrum doloribus itaque ducimus ipsum porro molestiae quam consequatur numquam?',
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius aspernatur nostrum doloribus itaque ducimus ipsum porro molestiae quam consequatur numquam?',
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius aspernatur nostrum doloribus itaque ducimus ipsum porro molestiae quam consequatur numquam?',
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius aspernatur nostrum doloribus itaque ducimus ipsum porro molestiae quam consequatur numquam?',
+    'Ultron is our next-gen battery technology built for cleaner, safer and more efficient energy storage—engineered to power the future without harming it.',
+    'RYM provides energy solutions from compact 1.8 kWh units to powerful 15 kWh systems, designed for everything from small devices to full-scale mobility.',
+    'RYM Grenergy was founded on 2nd Jan 2023 with a simple mission—build sustainable energy technologies that India can proudly call its own.',
+    'RYM has earned multiple national innovation awards and hackathon wins, celebrating our work in clean energy, EV systems, and deep-tech engineering. The recent on being KPIT Sparkle Gold Award.',
+    'Absolutely. Our products focus on sustainable materials, reduced chemical impact, ethical sourcing, and recyclable designs—clean energy at every step.',
   ];
   return (
     <section className={styles.questionsContainer}>

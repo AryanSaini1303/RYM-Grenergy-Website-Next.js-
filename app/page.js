@@ -18,14 +18,14 @@ export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkWidth = () => {
-      setIsMobile(window.innerWidth < 1100);
-    };
-    checkWidth();
-    window.addEventListener('resize', checkWidth);
-    return () => window.removeEventListener('resize', checkWidth);
-  }, []);
+  // useEffect(() => {
+  //   const checkWidth = () => {
+  //     setIsMobile(window.innerWidth < 1100);
+  //   };
+  //   checkWidth();
+  //   window.addEventListener('resize', checkWidth);
+  //   return () => window.removeEventListener('resize', checkWidth);
+  // }, []);
 
   if (isMobile) {
     return <MobileBlocker />;
