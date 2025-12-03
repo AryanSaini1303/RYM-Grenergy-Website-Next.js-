@@ -230,51 +230,56 @@
   justify-content: center;
   align-items: center;
 }
+
 .specialitiesSection .tab {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
 }
+
 .specialitiesSection .tab .infoContainer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
-  padding: 0;
   justify-content: center;
   width: 45%;
 }
+
 .specialitiesSection .tab .imageContainer {
   width: 50%;
   height: auto;
 }
+
 .specialitiesSection .tab .imageContainer img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   border-radius: var(--img-radius);
   display: block;
-  /* object-fit: cover; */
 }
+
 .specialitiesSection .tab .infoContainer h1 {
   font-size: 3rem;
   line-height: 3.5rem;
 }
-.specialitiesSection .tab .infoContainer p {
-  font-size: 0.9rem;
-  font-weight: 200;
-  font-style: italic;
-  line-height: 1rem;
-  margin-top: 1rem;
-}
+
 .specialitiesSection .tab .infoContainer h1 span {
   display: block;
   color: var(--highlight-color);
   font-family: 'Dancing Script', cursive;
-  font-optical-sizing: auto;
-  /* font-weight: ; */
   font-size: 5rem;
-  font-style: normal;
   transform: rotate(-10deg) translateY(-2rem);
 }
+
+.specialitiesSection .tab .infoContainer p {
+  font-size: 0.9rem;
+  font-weight: 200;
+  font-style: italic;
+  line-height: 1.4rem;
+  margin-top: 1rem;
+}
+
 .knowMoreBtn {
   background-color: rgba(255, 255, 255, 0);
   border: solid var(--highlight-color);
@@ -602,6 +607,66 @@
     font-size: 0.8rem;
   }
   .statsContainer .col p:last-child {
+    font-size: 0.85rem;
+  }
+}
+
+/* @media (min-width: 901px) {
+  .specialitiesSection .tab {
+    flex-direction: row-reverse;
+  }
+} */
+
+@media (max-width: 900px) {
+  .specialitiesSection {
+    margin: 4rem 2rem;
+    gap: 3.5rem;
+  }
+  .specialitiesSection .tab {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .specialitiesSection .tab:nth-child(2) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .specialitiesSection .tab .infoContainer {
+    width: 100%;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .specialitiesSection .tab .imageContainer {
+    width: 100%;
+  }
+  .specialitiesSection .tab .infoContainer h1 {
+    font-size: 2.3rem;
+    line-height: 2.7rem;
+  }
+  .specialitiesSection .tab .infoContainer h1 span {
+    font-size: 3.5rem;
+    transform: rotate(-8deg) translateY(-1.5rem);
+  }
+  .specialitiesSection .tab .infoContainer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .specialitiesSection {
+    margin: 3rem 1.5rem;
+    gap: 3rem;
+  }
+  .specialitiesSection .tab .infoContainer h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  .specialitiesSection .tab .infoContainer h1 span {
+    font-size: 3rem;
+    transform: rotate(-8deg) translateY(-1.2rem);
+  }
+  .specialitiesSection .tab .infoContainer p {
     font-size: 0.85rem;
   }
 }
