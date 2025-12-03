@@ -277,11 +277,11 @@ export default function Home() {
       </section>
       <Achievements />
       <Testimonials />
-      {/* <Projects />
+      <Projects />
       <Goals />
       <Questions />
       <GetInTouch />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

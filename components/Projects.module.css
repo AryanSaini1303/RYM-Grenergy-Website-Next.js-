@@ -125,3 +125,69 @@
   height: 6rem;
   transform: rotate(180deg);
 }
+
+@media (max-width: 875px) {
+  .chartContainer .firstSection,
+  .chartContainer .secondSection {
+    flex-direction: column;
+    margin: 0 2rem;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .centerSection {
+    display: none;
+  }
+  .chartContainer .firstSection > div,
+  .chartContainer .secondSection > div {
+    transform: none !important;
+  }
+  .row h1 {
+    width: 100%;
+  }
+  .chartContainer .firstSection div div,
+  .chartContainer .secondSection div div {
+    display: none !important;
+  }
+  .projectContainer > h1 {
+    margin: 2.5rem 2rem 2.5rem 2rem;
+    font-size: 3rem;
+  }
+  .projectContainer .chartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectContainer > h1 {
+    margin: 2.5rem 1.5rem 2.5rem 1.5rem;
+    font-size: 2.4rem;
+  }
+  .chartContainer .firstSection,
+  .chartContainer .secondSection {
+    margin: 0 1.5rem;
+    gap: 1.5rem;
+  }
+  .chartContainer .row div h1 {
+    font-size: 1.2rem;
+  }
+  .chartContainer .row div p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chartContainer .firstSection,
+  .chartContainer .secondSection {
+    margin: 0 1.5rem;
+    gap: 1rem;
+  }
+  .projectContainer > h1 {
+    font-size: 2rem;
+  }
+  .chartContainer .row div h1 {
+    font-size: 1.1rem;
+  }
+}
