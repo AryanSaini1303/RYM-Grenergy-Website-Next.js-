@@ -4,8 +4,6 @@ import styles from './Questions.module.css';
 import { Accordion, AccordionItem } from '@heroui/accordion';
 
 export default function Questions() {
-  const defaultContent =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et voluptates explicabo unde reiciendis voluptatibus, nemo cum ducimus est labore perferendis.';
   const headings = [
     'What does RYM Grenergy specialize in?',
     'What is Ultron?',

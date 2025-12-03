@@ -1,29 +1,73 @@
-.questionsContainer{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 2.5rem 4rem;
-    background-color: black;
-    color: rgb(255, 255, 255);
+.questionsContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 2.5rem 4rem;
+  background-color: black;
+  color: rgb(255, 255, 255);
 }
-.questionsContainer header h1{
-    font-size: 1.5rem;
-    font-weight: 200;
+.questionsContainer header h1 {
+  font-size: 1.5rem;
+  font-weight: 200;
 }
-.accordionContainer button{
-    display: flex;
-    width: 100%;
-    background-color: black;
-    border: none;
-    color: rgb(191, 191, 191);
-    justify-content: space-between;
-    padding: 1rem 0;
+.accordionContainer {
+  width: 100%;
+}
+.accordionContainer button {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  border: none;
+  color: rgb(191, 191, 191);
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.accordionContainer button div{
+    text-align: left;
+}
+.accordionContainer hr {
+  filter: contrast(0%) brightness(50%);
+}
+.accordionContainer section div {
+  padding-bottom: 0.3rem;
+  color: rgb(101, 101, 101);
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+@media (max-width: 1024px) {
+  .questionsContainer {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding: 2.5rem 3rem;
+  }
+  .questionsContainer header h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .questionsContainer {
+    padding: 2rem 1.75rem;
+  }
+  .questionsContainer header h1 {
+    font-size: 1.3rem;
+  }
+  .accordionContainer button {
+    font-size: 1.05rem;
+    padding: 0.9rem 0;
+  }
+  .accordionContainer section div {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .questionsContainer {
+    padding: 2rem 1.25rem;
+  }
+  .questionsContainer header h1 {
     font-size: 1.2rem;
-    cursor: pointer;
-}
-.accordionContainer hr{
-    filter: contrast(0%) brightness(50%);
-}
-.accordionContainer section div{
-    padding-bottom: 0.3rem;
-    color: rgb(101, 101, 101);
+  }
 }
