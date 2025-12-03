@@ -56,3 +56,85 @@
   height: 8vw;
   width: 8vw;
 }
+
+@media (max-width: 1024px) {
+  .goalContainer {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 4rem;
+    gap: 3rem;
+  }
+  .infoContainer header h1 {
+    font-size: 4.5rem;
+  }
+  .infoContainer header h2 {
+    font-size: 1.8rem;
+  }
+  .imageContainer {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .imageContainer img {
+    height: 10vw;
+    width: 10vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .goalContainer {
+    padding: 2.5rem 2rem;
+    gap: 2.5rem;
+  }
+  .infoContainer {
+    gap: 1.5rem;
+  }
+  .infoContainer header {
+    gap: 0.75rem;
+  }
+  .infoContainer header h1 {
+    font-size: 3.2rem;
+  }
+  .infoContainer header h2 {
+    font-size: 1.6rem;
+  }
+  .infoContainer p {
+    font-size: 0.85rem;
+  }
+  .imageContainer {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .imageContainer img {
+    height: 18vw;
+    width: 18vw;
+  }
+  .infoContainer header::after {
+    bottom: -0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .goalContainer {
+    padding: 2rem 1.5rem;
+  }
+  .infoContainer header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .infoContainer header h1 {
+    font-size: 2.5rem;
+  }
+  .infoContainer header h2 {
+    font-size: 1.4rem;
+  }
+  .infoContainer header::after {
+    width: 60%;
+  }
+  .imageContainer img {
+    height: 22vw;
+    width: 22vw;
+  }
+  .infoContainer header::after {
+    height: 4px;
+    bottom: 0;
+  }
+}

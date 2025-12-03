@@ -279,9 +279,9 @@ export default function Home() {
       <Testimonials />
       <Projects />
       <Goals />
-      <Questions />
+      {/* <Questions />
       <GetInTouch />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
