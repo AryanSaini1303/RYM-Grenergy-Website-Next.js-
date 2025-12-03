@@ -165,11 +165,13 @@
   width: 30%;
   padding-left: 4rem;
 }
+
 .infoContainer h1 {
   font-size: 8rem;
   font-weight: 300;
   line-height: 7rem;
 }
+
 .infoContainer p {
   font-size: 1.1rem;
   font-weight: 200;
@@ -179,35 +181,47 @@
   text-align: justify;
   transition: all 0.2s ease-in-out;
 }
+
 .statsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
-  /* place-content: center; */
-  margin: 0 4rem;
-  gap: 10rem;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 4rem 4rem;
+  gap: 4rem;
 }
+
 .statsContainer .col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 0.5hrem;
+  gap: 0.5rem;
 }
+
 .statsContainer .col h1 {
-  font-size: 6rem;
+  font-size: 4.5rem;
+  line-height: 1;
 }
+
 .statsContainer .col p:first-child {
   border: solid var(--highlight-color) 1px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .statsContainer .col h1 span {
-  font-size: 2rem;
+  font-size: 1.4rem;
+  margin-left: 0.3rem;
 }
+
 .statsContainer .col p:last-child {
   font-style: italic;
   font-weight: 200;
+  max-width: 18rem;
+  font-size: 0.9rem;
 }
+
 .specialitiesSection {
   margin: 5rem 4rem;
   display: flex;
@@ -557,5 +571,37 @@
   }
   .aboutSection .imageContainer::after {
     top: -6px;
+  }
+}
+
+@media (max-width: 900px) {
+  .statsContainer {
+    margin: 3rem 1.5rem;
+    gap: 3rem;
+  }
+  .statsContainer .col h1 {
+    font-size: 3.5rem;
+  }
+  .statsContainer .col p:last-child {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .statsContainer {
+    margin: 2.5rem 1rem;
+    gap: 2.5rem;
+  }
+  .statsContainer .col {
+    align-items: flex-start;
+  }
+  .statsContainer .col h1 {
+    font-size: 3rem;
+  }
+  .statsContainer .col p:first-child {
+    font-size: 0.8rem;
+  }
+  .statsContainer .col p:last-child {
+    font-size: 0.85rem;
   }
 }

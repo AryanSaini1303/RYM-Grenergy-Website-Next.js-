@@ -99,7 +99,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className={styles.specialitiesSection}>
+      {/* <section className={styles.specialitiesSection}>
         <div className={styles.tab}>
           <div className={styles.infoContainer}>
             <h1>
@@ -281,7 +281,7 @@ export default function Home() {
       <Goals />
       <Questions />
       <GetInTouch />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
