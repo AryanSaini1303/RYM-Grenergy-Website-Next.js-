@@ -144,7 +144,6 @@
   background-color: var(--highlight-color);
   top: -10px;
   right: 0;
-  z-index: 100;
 }
 
 .aboutSection .imageContainer::before {
@@ -155,7 +154,6 @@
   background-color: var(--highlight-color);
   bottom: -10px;
   left: 0;
-  z-index: 100;
 }
 
 .infoContainer {

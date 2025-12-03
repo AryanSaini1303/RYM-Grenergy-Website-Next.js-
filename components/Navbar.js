@@ -17,8 +17,6 @@ export default function Navbar() {
       <Link href="/" className={styles.logoWrapper}>
         <Image src="/images/logo.png" alt="Logo" width={120} height={40} />
       </Link>
-
-      {/* Desktop nav */}
       <ul className={styles.tabs}>
         <li className={url === '/' ? styles.active : ''}>
           <Link href="/">Home</Link>
@@ -36,11 +34,9 @@ export default function Navbar() {
           <a href="#contact">Contact</a>
         </li>
       </ul>
-
-      {/* Desktop buttons */}
       <section className={styles.btnContainer}>
         <button>
-          <Link href="/images/logo.png" download>
+          <Link href="/doc.pdf" download>
             Download Pitch Deck
           </Link>
         </button>
@@ -48,20 +44,16 @@ export default function Navbar() {
           <Link href="/">Book a Free Demo</Link>
         </button>
       </section>
-
-      {/* Hamburger icon (mobile) */}
       <button
         className={`${styles.menuToggle} ${isMenuOpen ? styles.menuOpen : ''}`}
         aria-label="Toggle navigation menu"
         aria-expanded={isMenuOpen}
-        onClick={() => setIsMenuOpen(prev => !prev)}
+        onClick={() => setIsMenuOpen((prev) => !prev)}
       >
         <span />
         <span />
         <span />
       </button>
-
-      {/* Mobile slide-in menu */}
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
           <ul className={styles.mobileTabs}>
@@ -91,7 +83,6 @@ export default function Navbar() {
               </a>
             </li>
           </ul>
-
           <section className={styles.mobileBtns}>
             <button onClick={closeMenu}>
               <Link href="/images/logo.png" download>

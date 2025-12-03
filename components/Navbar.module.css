@@ -98,6 +98,8 @@
   background: transparent;
   cursor: pointer;
   z-index: 10000;
+  position: fixed;
+  right: 1.5rem;
 }
 
 .menuToggle span {
@@ -134,13 +136,6 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 40;
-}
-
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 30;
 }
 
 .mobileTabs {
