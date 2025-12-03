@@ -276,8 +276,8 @@ export default function Home() {
         </button>
       </section>
       <Achievements />
-      {/* <Testimonials />
-      <Projects />
+      <Testimonials />
+      {/* <Projects />
       <Goals />
       <Questions />
       <GetInTouch />

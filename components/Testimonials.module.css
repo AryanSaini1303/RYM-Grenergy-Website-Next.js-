@@ -3,38 +3,47 @@
   background-color: black;
   color: white;
 }
+
 .testimonialContainer > header {
   display: flex;
   justify-content: space-between;
-  margin: 0 5rem 2.5rem 5rem;
+  align-items: center;
+  margin: 0 0 2.5rem 0;
   font-size: 1.2rem;
+  gap: 1rem;
 }
+
 .testimonialContainer > header h1 {
   font-weight: 350;
 }
-.testimonialContainer header h1:nth-child(2) {
+
+.testimonialContainer > header h1:nth-child(2) {
   color: var(--highlight-color);
   font-family: 'Dancing Script', cursive;
   font-optical-sizing: auto;
   font-style: normal;
 }
+
 .testimonialContainer .gridContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 2rem 6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem 4rem;
   position: relative;
+  align-items: stretch;
 }
+
 .testimonialContainer .gridContainer .tabs {
   display: flex;
   flex-direction: column;
   border-radius: var(--img-radius);
-  /* height: fit-content; */
+  overflow: hidden;
 }
+
 .testimonialContainer .gridContainer .tabs .imageContainer {
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 5;
 }
+
 .testimonialContainer .gridContainer .tabs .imageContainer img {
   height: 100%;
   width: 100%;
@@ -42,6 +51,7 @@
   display: block;
   object-fit: cover;
 }
+
 .testimonialContainer .gridContainer .tabs .infoContainer {
   display: flex;
   flex-direction: column;
@@ -50,6 +60,7 @@
   padding: 1rem;
   background-color: #171717;
 }
+
 .testimonialContainer .gridContainer .tabs .infoContainer header {
   display: flex;
   width: 100%;
@@ -57,15 +68,11 @@
   margin: 0;
   font-size: 0.8rem;
 }
-.infoContainer h1 {
-  font-size: 1.3rem;
-}
-.infoContainer h3 {
-  font-size: 0.8rem;
-}
+
 .testimonialContainer .gridContainer .tabs .infoContainer header p:first-child {
   color: var(--highlight-color);
 }
+
 .testimonialContainer
   .gridContainer
   .tabs
@@ -74,18 +81,78 @@
   p:not(:first-child) {
   color: grey;
 }
+
+.testimonialContainer .gridContainer .tabs .infoContainer h1 {
+  font-size: 1.3rem;
+}
+
+.testimonialContainer .gridContainer .tabs .infoContainer h3 {
+  font-size: 0.8rem;
+  color: #c8c8c8;
+}
+
 .testimonialContainer .gridContainer .tabs .infoContainer .para {
   color: grey;
   font-style: italic;
   font-size: 0.8rem;
+  margin-top: 0.5rem;
 }
-.gridContainer .tabs:nth-child(2),
-.tabs:nth-child(5) {
-  transform: translateY(-5rem);
+
+.testimonialContainer .btn {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 0.5rem;
+  position: static;
+  transform: none;
 }
-.btn {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+@media (min-width: 1024px) {
+  .testimonialContainer .gridContainer .tabs:nth-child(2),
+  .testimonialContainer .gridContainer .tabs:nth-child(5) {
+    transform: translateY(-5.5rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimonialContainer {
+    padding: 2.5rem 2rem;
+  }
+  .testimonialContainer .gridContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .testimonialContainer .gridContainer .tabs:nth-child(2),
+  .testimonialContainer .gridContainer .tabs:nth-child(5) {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonialContainer {
+    padding: 2rem 1.25rem;
+  }
+  .testimonialContainer > header {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.1rem;
+  }
+  .testimonialContainer .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .testimonialContainer .gridContainer .tabs {
+    transform: none;
+  }
+  .testimonialContainer .gridContainer .tabs .imageContainer {
+    aspect-ratio: 4 / 4.5;
+  }
+  .testimonialContainer .gridContainer .tabs .infoContainer h1 {
+    font-size: 1.2rem;
+  }
+  .testimonialContainer .gridContainer .tabs .infoContainer .para {
+    font-size: 0.8rem;
+  }
+  .testimonialContainer .btn {
+    margin-top: 1rem;
+  }
 }
