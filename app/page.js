@@ -275,13 +275,13 @@ export default function Home() {
           Shop All <ArrowRightUp />
         </button>
       </section>
-      <Achievements />
+      {/* <Achievements />
       <Testimonials />
       <Projects />
       <Goals />
       <Questions />
       <GetInTouch />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
