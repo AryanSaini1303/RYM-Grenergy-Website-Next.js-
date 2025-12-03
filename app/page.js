@@ -281,7 +281,7 @@ export default function Home() {
       <Goals />
       <Questions />
       <GetInTouch />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
