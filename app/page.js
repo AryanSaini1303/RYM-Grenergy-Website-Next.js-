@@ -141,40 +141,40 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={styles.partnerContainer} id="clients">
-        <div>
-          <Image
-            src={'/images/gd goenka.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
-        <div>
-          <Image
-            src={'/images/iit.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
-        <div>
-          <Image
-            src={'/images/synchronous.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
-        <div>
-          <Image
-            src={'/images/gkm.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
-      </section>
+        <section className={styles.partnerContainer} id="clients">
+          <div>
+            <Image
+              src={'/images/gd goenka.png'}
+              alt="partner"
+              width={2000}
+              height={2000}
+            />
+          </div>
+          <div>
+            <Image
+              src={'/images/iit.png'}
+              alt="partner"
+              width={2000}
+              height={2000}
+            />
+          </div>
+          <div>
+            <Image
+              src={'/images/synchronous.png'}
+              alt="partner"
+              width={2000}
+              height={2000}
+            />
+          </div>
+          <div>
+            <Image
+              src={'/images/gkm.png'}
+              alt="partner"
+              width={2000}
+              height={2000}
+            />
+          </div>
+        </section>
       <section className={styles.products} id="products">
         <h1>Featured Products</h1>
         <div className={styles.cardContainer}>

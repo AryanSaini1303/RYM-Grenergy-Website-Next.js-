@@ -245,6 +245,7 @@
   align-items: flex-start;
   justify-content: center;
   width: 45%;
+  padding: 0;
 }
 
 .specialitiesSection .tab .imageContainer {
@@ -348,18 +349,31 @@
   opacity: 0.8;
   transform: scale(0.98);
 }
+
 .partnerContainer {
   margin: 2.5rem 0;
-  padding: 0rem 4rem;
+  padding: 2rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: rgba(0, 0, 0, 0.212) solid 1px;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
+
 .partnerContainer div img {
-  height: auto;
   width: 14rem;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: all 0.2s ease;
 }
+
+.partnerContainer div img:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
 .products {
   display: flex;
   flex-direction: column;
@@ -658,6 +672,9 @@
     margin: 3rem 1.5rem;
     gap: 3rem;
   }
+  .specialitiesSection .tab{
+    gap: 1rem;
+  }
   .specialitiesSection .tab .infoContainer h1 {
     font-size: 2rem;
     line-height: 2.4rem;
@@ -668,5 +685,26 @@
   }
   .specialitiesSection .tab .infoContainer p {
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .partnerContainer {
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .partnerContainer div img {
+    width: 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .partnerContainer {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  .partnerContainer div img {
+    width: 8rem;
   }
 }
