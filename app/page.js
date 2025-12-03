@@ -275,8 +275,8 @@ export default function Home() {
           Shop All <ArrowRightUp />
         </button>
       </section>
-      {/* <Achievements />
-      <Testimonials />
+      <Achievements />
+      {/* <Testimonials />
       <Projects />
       <Goals />
       <Questions />
