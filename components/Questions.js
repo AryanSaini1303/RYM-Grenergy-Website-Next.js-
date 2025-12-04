@@ -8,7 +8,7 @@ export default function Questions() {
     'What does RYM Grenergy specialize in?',
     'What is Ultron?',
     'How much energy capacity does RYM offer?',
-    'When was a RYM Grenergy founded?',
+    'When was RYM Grenergy founded?',
     'What recognition has RYM received?',
     'Are RYM products environmentally friendly?',
   ];
