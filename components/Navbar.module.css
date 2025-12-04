@@ -91,11 +91,13 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: none;
-  background: transparent;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border:none;
+  background: white;
+  box-shadow: 2px 2px 5px white;
+  padding: 0.8rem;
   cursor: pointer;
   z-index: 10000;
   position: fixed;
