@@ -29,7 +29,7 @@ const data = [
     para1:
       "India's first smart and indigeneous earthquake early warning system",
     para2: 'Developed with InventisLabs and IIT Roorkee',
-    image: '/images/eq.png',
+    image: '/images/EQ.png',
   },
   {
     id: '3',
