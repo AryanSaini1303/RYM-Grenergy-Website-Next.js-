@@ -28,7 +28,7 @@ export default function Navbar() {
           <a href="#products">Products</a>
         </li>
         <li>
-          <a href="#clients">Clients</a>
+          <a href="#testimonials">Testimonials</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
@@ -73,8 +73,8 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a href="#clients" onClick={closeMenu}>
-                Clients
+              <a href="#testimonials" onClick={closeMenu}>
+                Testimonials
               </a>
             </li>
             <li>

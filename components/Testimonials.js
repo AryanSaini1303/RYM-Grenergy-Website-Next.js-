@@ -4,7 +4,7 @@ import KnowMoreButton from './KnowMoreButton';
 
 export default function Testimonials() {
   return (
-    <section className={styles.testimonialContainer}>
+    <section className={styles.testimonialContainer} id='testimonials'>
       <header>
         <h1>Testimonials</h1>
         <h1>Wall of love...</h1>
