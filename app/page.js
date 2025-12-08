@@ -160,7 +160,7 @@ export default function Home() {
           </div>
           <div>
             <Image
-              src={'/images/synchronous.png'}
+              src={'/images/dmg.png'}
               alt="partner"
               width={2000}
               height={2000}
