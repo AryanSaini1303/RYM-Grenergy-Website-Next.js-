@@ -14,9 +14,49 @@ import GetInTouch from '@/components/GetInTouch';
 import Footer from '@/components/Footer';
 import MobileBlocker from '@/components/MobileBlocker';
 
+const data = [
+  {
+    id: '1',
+    title: "Tranform Your Energy Systems for Tomorrow's Demands",
+    para1:
+      'We build intelligent energy management solutions that optimize efficiency, reduce costs, and future-proof your infrastructure.',
+    para2: '',
+    image: '/images/hero.jpeg',
+  },
+  {
+    id: '2',
+    title: 'EQ ALERT: Advanced Seismic Safety for everyone',
+    para1:
+      "India's first smart and indigeneous earthquake early warning system",
+    para2: 'Developed with InventisLabs and IIT Roorkee',
+    image: '/images/eq.png',
+  },
+  {
+    id: '3',
+    title: 'Weighbridge AI',
+    para1: 'Weighbridge Automation',
+    para2: '',
+    image: '/images/wb.png',
+  },
+];
+
 export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [counter, setCounter] = useState(0);
+  const [prevCounter, setPrevCounter] = useState(data.length - 1); // start with last as "previous"
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter((prev) => {
+        setPrevCounter(prev); // remember the old slide
+        const next = prev === data.length - 1 ? 0 : prev + 1;
+        return next;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // useEffect(() => {
   //   const checkWidth = () => {
@@ -30,28 +70,40 @@ export default function Home() {
   if (isMobile) {
     return <MobileBlocker />;
   }
-  
+
   return (
     <div className="wrapper">
       <Navbar />
       <section className={styles.heroSection}>
         <div className={styles.blur}></div>
         <div className={styles.overlayContent}>
-          <h1>Tranform Your Energy Systems for Tomorrow's Demands</h1>
-          <p>
-            We build intelligent energy management solutions that optimize
-            efficiency, reduce costs, and future-proof your infrastructure.
-          </p>
+          <h1>{data[counter].title}</h1>
+          <p>{data[counter].para1}</p>
+          <p>{data[counter].para2}</p>
           <button>
             Get Started <ArrowRightUp />
           </button>
         </div>
-        <Image
-          src={'/images/hero.jpeg'}
-          alt="Hero Image"
-          width={10000}
-          height={10000}
-        />
+        <div className={styles.imageWrapper}>
+          {data.map((item, index) => {
+            const isActive = index === counter;
+            const isPrev = index === prevCounter;
+            return (
+              <Image
+                key={item.id}
+                src={item.image}
+                alt={item.title}
+                width={10000}
+                height={10000}
+                className={`
+                ${styles.heroImage}
+                ${isActive ? styles.activeSlide : ''}
+                ${isPrev ? styles.prevSlide : ''}
+              `}
+              />
+            );
+          })}
+        </div>
       </section>
       <section className={styles.aboutSection} id="about">
         <div className={styles.infoContainer}>
@@ -141,40 +193,40 @@ export default function Home() {
           </div>
         </div>
       </section>
-        <section className={styles.partnerContainer} id="clients">
-          <div>
-            <Image
-              src={'/images/gd goenka.png'}
-              alt="partner"
-              width={2000}
-              height={2000}
-            />
-          </div>
-          <div>
-            <Image
-              src={'/images/iit.png'}
-              alt="partner"
-              width={2000}
-              height={2000}
-            />
-          </div>
-          <div>
-            <Image
-              src={'/images/dmg.png'}
-              alt="partner"
-              width={2000}
-              height={2000}
-            />
-          </div>
-          <div>
-            <Image
-              src={'/images/gkm.png'}
-              alt="partner"
-              width={2000}
-              height={2000}
-            />
-          </div>
-        </section>
+      <section className={styles.partnerContainer} id="clients">
+        <div>
+          <Image
+            src={'/images/gd goenka.png'}
+            alt="partner"
+            width={2000}
+            height={2000}
+          />
+        </div>
+        <div>
+          <Image
+            src={'/images/iit.png'}
+            alt="partner"
+            width={2000}
+            height={2000}
+          />
+        </div>
+        <div>
+          <Image
+            src={'/images/dmg.png'}
+            alt="partner"
+            width={2000}
+            height={2000}
+          />
+        </div>
+        <div>
+          <Image
+            src={'/images/gkm.png'}
+            alt="partner"
+            width={2000}
+            height={2000}
+          />
+        </div>
+      </section>
       <section className={styles.products} id="products">
         <h1>Featured Products</h1>
         <div className={styles.cardContainer}>
