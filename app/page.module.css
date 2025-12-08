@@ -6,6 +6,7 @@
 .imageWrapper {
   position: absolute;
   inset: 0;
+  overflow: hidden;
 }
 
 .heroImage {
