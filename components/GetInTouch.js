@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './GetInTouch.module.css';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';

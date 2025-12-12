@@ -1,3 +1,5 @@
+'use client'
+
 import { ArrowRightUp } from './Arrow';
 import styles from './Questions.module.css';
 import { useEffect, useRef, useState } from 'react';

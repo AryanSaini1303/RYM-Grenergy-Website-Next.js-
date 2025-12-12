@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './Projects.module.css';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
