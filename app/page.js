@@ -54,11 +54,11 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
   const [counter, setCounter] = useState(0);
   const [prevCounter, setPrevCounter] = useState(data.length - 1);
-  const container = useRef();
-  const statsContainer = useRef();
-  const aboutContainer = useRef();
-  const specialitiesContainer = useRef();
-  const productsContainer = useRef();
+  const container = useRef(null);
+  const statsContainer = useRef(null);
+  const aboutContainer = useRef(null);
+  const specialitiesContainer = useRef(null);
+  const productsContainer = useRef(null);
   const [year, setYear] = useState(0);
   const [percent, setPercent] = useState(0);
   const [level, setLevel] = useState(0);

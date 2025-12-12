@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 
 export default function Projects() {
   const [isMobile, setIsMobile] = useState(false);
-  const container = useRef();
+  const container = useRef(null);
 
   useEffect(() => {
     const checkWidth = () => {

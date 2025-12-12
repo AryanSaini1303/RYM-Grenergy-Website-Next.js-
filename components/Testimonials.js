@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import styles from './Testimonials.module.css';
@@ -13,8 +13,8 @@ if (typeof window !== 'undefined') {
 }
 
 export default function Testimonials() {
-  const container = useRef();
-  const headerRef = useRef();
+  const container = useRef(null);
+  const headerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export default function Testimonials() {
     >
       <header ref={headerRef}>
         <h1>Testimonials</h1>
-        <h1>Wall of love...</h1>
+        <h1>Wall of Love...</h1>
       </header>
       <div className={`${styles.gridContainer} gridContainer`}>
         <div className={styles.tabs}>

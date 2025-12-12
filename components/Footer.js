@@ -55,16 +55,16 @@ export default function Footer() {
               <li>EEDW</li>
             </Link>
             <Link href={'#products'}>
-              <li>SMART HOME AUTOMATION SYSTEM</li>
-            </Link>
-            <Link href={'#products'}>
               <li>DamChat</li>
             </Link>
             <Link href={'#products'}>
               <li>Vehicle Tracking</li>
             </Link>
             <Link href={'#products'}>
-              <li>BULK ATTENDANCE SYSTEM</li>
+              <li>Bulk Attendance System</li>
+            </Link>
+            <Link href={'#products'}>
+              <li>Smart Home Automation System</li>
             </Link>
           </ul>
         </div>
@@ -97,7 +97,7 @@ export default function Footer() {
           <h5>Press</h5>
           <ul>
             <Link href={'#'}>
-              <li>Press releases</li>
+              <li>Press Releases</li>
             </Link>
             <Link href={'#'}>
               <li>Press Resources</li>

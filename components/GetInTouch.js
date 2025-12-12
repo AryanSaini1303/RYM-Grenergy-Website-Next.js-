@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import styles from './GetInTouch.module.css';
 import { useEffect, useRef, useState } from 'react';
@@ -17,7 +17,7 @@ export default function GetInTouch() {
     email: '',
   });
   const [loading, setLoading] = useState(false);
-  const container = useRef();
+  const container = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

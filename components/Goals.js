@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import styles from './Goals.module.css';
 import { useEffect, useRef, useState } from 'react';
@@ -13,7 +13,7 @@ if (typeof window !== 'undefined') {
 
 export default function Goals() {
   const [isMobile, setIsMobile] = useState(false);
-  const container = useRef();
+  const container = useRef(null);
 
   useGSAP(
     () => {

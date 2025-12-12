@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { ArrowRightUp } from './Arrow';
 import styles from './Questions.module.css';
@@ -29,7 +29,7 @@ export default function Questions() {
     'RYM has earned multiple national innovation awards and hackathon wins, celebrating our work in clean energy, EV systems, and deep-tech engineering. The recent on being KPIT Sparkle Gold Award.',
     'Absolutely. Our products focus on sustainable materials, reduced chemical impact, ethical sourcing, and recyclable designs—clean energy at every step.',
   ];
-  const container = useRef();
+  const container = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export default function Questions() {
       scope: container,
     },
   );
-  
+
   useGSAP(
     () => {
       if (isMobile) return;
@@ -114,7 +114,10 @@ export default function Questions() {
   );
 
   return (
-    <section className={`${styles.questionsContainer} questionsContainer`} ref={container}>
+    <section
+      className={`${styles.questionsContainer} questionsContainer`}
+      ref={container}
+    >
       <header>
         <h1>
           Your Questions <br /> Answered...
