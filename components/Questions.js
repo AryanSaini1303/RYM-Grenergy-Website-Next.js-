@@ -1,7 +1,14 @@
 import { ArrowRightUp } from './Arrow';
 import styles from './Questions.module.css';
-
+import { useEffect, useRef, useState } from 'react';
 import { Accordion, AccordionItem } from '@heroui/accordion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 export default function Questions() {
   const headings = [
@@ -20,14 +27,98 @@ export default function Questions() {
     'RYM has earned multiple national innovation awards and hackathon wins, celebrating our work in clean energy, EV systems, and deep-tech engineering. The recent on being KPIT Sparkle Gold Award.',
     'Absolutely. Our products focus on sustainable materials, reduced chemical impact, ethical sourcing, and recyclable designs—clean energy at every step.',
   ];
+  const container = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < 1100);
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.from('.accordionContainer div div', {
+        y: 0,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          // markers:true
+        },
+      });
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.from('.accordionContainer div hr', {
+        width: 0,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          // markers:true
+        },
+      });
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
+  );
+  
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.from('.questionsContainer header', {
+        x: -20,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          // markers:true
+        },
+      });
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
+  );
+
   return (
-    <section className={styles.questionsContainer}>
+    <section className={`${styles.questionsContainer} questionsContainer`} ref={container}>
       <header>
         <h1>
           Your Questions <br /> Answered...
         </h1>
       </header>
-      <div className={styles.accordionContainer}>
+      <div className={`${styles.accordionContainer} accordionContainer`}>
         <Accordion>
           {headings.map((heading, index) => (
             <AccordionItem

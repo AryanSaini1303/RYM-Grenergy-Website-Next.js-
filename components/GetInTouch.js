@@ -1,5 +1,12 @@
 import styles from './GetInTouch.module.css';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 export default function GetInTouch() {
   const [formData, setFormData] = useState({
@@ -8,6 +15,65 @@ export default function GetInTouch() {
     email: '',
   });
   const [loading, setLoading] = useState(false);
+  const container = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < 1100);
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.from('.formContainer input', {
+        y: -30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          // markers:true
+        },
+      });
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.from('.infoContainer *', {
+        x: -50,
+        opacity: 0,
+        duration: 2,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          // markers:true
+        },
+      });
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
+  );
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -68,8 +134,8 @@ export default function GetInTouch() {
   }
 
   return (
-    <section className={styles.GetInTouchSection} id="contact">
-      <div className={styles.infoContainer}>
+    <section className={styles.GetInTouchSection} id="contact" ref={container}>
+      <div className={`${styles.infoContainer} infoContainer`}>
         <h1>Get In Touch With Us!</h1>
         <p>
           Began your journey at RYM. Fill in your details and our team will
@@ -77,7 +143,7 @@ export default function GetInTouch() {
         </p>
       </div>
 
-      <div className={styles.formContainer}>
+      <div className={`${styles.formContainer} formContainer`}>
         <form onSubmit={handleSubmit}>
           {/* <label htmlFor="name"></label> */}
           <input

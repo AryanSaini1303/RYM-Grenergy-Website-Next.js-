@@ -1,15 +1,94 @@
 import Image from 'next/image';
 import styles from './Testimonials.module.css';
 import KnowMoreButton from './KnowMoreButton';
+import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 export default function Testimonials() {
+  const container = useRef();
+  const headerRef = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < 1100);
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.gridContainer div:nth-child(2), .gridContainer div:nth-child(5)',
+        { y: 50, opacity: 0 },
+        {
+          y: -90,
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out()',
+          scrollTrigger: {
+            trigger: container.current,
+            start: 'top 100%',
+            toggleActions: 'play none none reverse',
+            // markers: true,
+          },
+        },
+      );
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.gridContainer div:not(:nth-child(2)):not(:nth-child(5))',
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out()',
+          scrollTrigger: {
+            trigger: container.current,
+            start: 'top 100%',
+            toggleActions: 'play none none reverse',
+            // markers: true,
+          },
+        },
+      );
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
+  );
+
   return (
-    <section className={styles.testimonialContainer} id='testimonials'>
-      <header>
+    <section
+      className={`${styles.testimonialContainer} testimonialContainer`}
+      id="testimonials"
+      ref={container}
+    >
+      <header ref={headerRef}>
         <h1>Testimonials</h1>
         <h1>Wall of love...</h1>
       </header>
-      <div className={styles.gridContainer}>
+      <div className={`${styles.gridContainer} gridContainer`}>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image

@@ -13,6 +13,16 @@ import Questions from '@/components/Questions';
 import GetInTouch from '@/components/GetInTouch';
 import Footer from '@/components/Footer';
 import MobileBlocker from '@/components/MobileBlocker';
+import { useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import Marquee from '@/components/Marquee';
+
+// Register plugins once
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 const data = [
   {
@@ -25,9 +35,8 @@ const data = [
   },
   {
     id: '2',
-    title: 'EQ ALERT: Advanced Seismic Safety for everyone',
-    para1:
-      "India's first smart and indigeneous earthquake early warning system",
+    title: "India's 1st Smart and Indigeneous Earthquake Early Warning System",
+    para1: 'EQ ALERT: Advanced Seismic Safety for everyone',
     para2: 'Developed with InventisLabs and IIT Roorkee',
     image: '/images/eqAlert.png',
   },
@@ -44,39 +53,247 @@ export default function Home() {
   const [isHoveringProducts, setIsHoveringProducts] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [counter, setCounter] = useState(0);
-  const [prevCounter, setPrevCounter] = useState(data.length - 1); // start with last as "previous"
+  const [prevCounter, setPrevCounter] = useState(data.length - 1);
+  const container = useRef();
+  const statsContainer = useRef();
+  const aboutContainer = useRef();
+  const specialitiesContainer = useRef();
+  const productsContainer = useRef();
+  const [year, setYear] = useState(0);
+  const [percent, setPercent] = useState(0);
+  const [level, setLevel] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setYear((prev) => {
+        if (prev == 2023) {
+          return prev;
+        } else if (prev >= 1992) {
+          return (prev += 1);
+        } else {
+          return (prev += 30);
+        }
+      });
+    }, 12);
+    const interval1 = setInterval(() => {
+      setPercent((prev) => {
+        if (prev == 80) {
+          return prev;
+        } else {
+          return (prev += 1);
+        }
+      });
+    }, 15);
+    const interval2 = setInterval(() => {
+      setLevel((prev) => {
+        if (prev == 4) {
+          return prev;
+        } else {
+          prev = prev + 0.1;
+          return parseFloat(prev.toFixed(1));
+        }
+      });
+    }, 30);
+    return () => {
+      clearInterval(interval);
+      clearInterval(interval1);
+      clearInterval(interval2);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((prev) => {
-        setPrevCounter(prev); // remember the old slide
+        setPrevCounter(prev);
         const next = prev === data.length - 1 ? 0 : prev + 1;
         return next;
       });
-    }, 4000);
-
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   const checkWidth = () => {
-  //     setIsMobile(window.innerWidth < 1100);
-  //   };
-  //   checkWidth();
-  //   window.addEventListener('resize', checkWidth);
-  //   return () => window.removeEventListener('resize', checkWidth);
-  // }, []);
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < 1100);
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
 
-  if (isMobile) {
-    return <MobileBlocker />;
-  }
+  useGSAP(
+    () => {
+      gsap.from('.overlayContent', {
+        y: 60,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.2,
+        ease: 'back',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+        },
+      });
+    },
+    { scope: container, dependencies: [counter], revertOnUpdate: true },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.aboutSection .infoContainer',
+        { y: 200, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            // markers:true,
+            trigger: aboutContainer.current,
+            start: 'top 80%',
+            // end: 'bottom 10%',
+            // scrub: true,
+            toggleActions: 'play none none reverse',
+          },
+        },
+      );
+    },
+    { revertOnUpdate: true, dependencies: [isMobile] },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.imageContainer',
+        { x: 200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            // markers:true,
+            trigger: aboutContainer.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        },
+      );
+    },
+    { revertOnUpdate: true, dependencies: [isMobile] },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.statsContainer .col',
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: aboutContainer.current,
+            start: 'top 10%',
+            toggleActions: 'play none none reverse',
+          },
+        },
+      );
+    },
+    { revertOnUpdate: true, dependencies: [isMobile], scope: statsContainer },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.specialitiesSection .tab img',
+        { x: 50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: specialitiesContainer.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+            // markers: true,
+          },
+        },
+      );
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: specialitiesContainer,
+    },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.specialitiesSection .tab .infoContainer',
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: specialitiesContainer.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+            // markers: true,
+          },
+        },
+      );
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: specialitiesContainer,
+    },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
+        '.products .cardContainer div',
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out()',
+          scrollTrigger: {
+            trigger: productsContainer.current,
+            start: 'top 55%',
+            toggleActions: 'play none none reverse',
+            // markers: true,
+          },
+        },
+      );
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: productsContainer,
+    },
+  );
+
+  // if (isMobile) {
+  //   return <MobileBlocker />;
+  // }
 
   return (
     <div className="wrapper">
       <Navbar />
-      <section className={styles.heroSection}>
+      <section className={styles.heroSection} ref={container}>
         <div className={styles.blur}></div>
-        <div className={styles.overlayContent}>
+        <div className={`${styles.overlayContent} overlayContent`}>
           <h1>{data[counter].title}</h1>
           <p>{data[counter].para1}</p>
           <p>{data[counter].para2}</p>
@@ -105,8 +322,12 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className={styles.aboutSection} id="about">
-        <div className={styles.infoContainer}>
+      <section
+        className={`${styles.aboutSection} aboutSection`}
+        id="about"
+        ref={aboutContainer}
+      >
+        <div className={`${styles.infoContainer} infoContainer`}>
           <h1>About Us</h1>
           <p>
             RYM Grenergy is an innovative tech company specialising in
@@ -119,7 +340,7 @@ export default function Home() {
             green energy and smart infrastructure.
           </p>
         </div>
-        <div className={styles.imageContainer}>
+        <div className={`${styles.imageContainer} imageContainer`}>
           <Image
             src={'/images/img1.jpeg'}
             alt="Section Image"
@@ -128,32 +349,39 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className={styles.statsContainer}>
-        <div className={styles.col}>
+      <section
+        className={`${styles.statsContainer} statsContainer`}
+        ref={statsContainer}
+      >
+        <div className={`${styles.col} col`}>
           <p>Founded</p>
-          <h1>2023</h1>
+          <h1>{year}</h1>
           <p>A diverse, inter-disciplinary team of talent.</p>
         </div>
-        <div className={styles.col}>
+        <div className={`${styles.col} col`}>
           <p>Reduced Footprint</p>
-          <h1>80%</h1>
+          <h1>{percent}%</h1>
           <p>
             Lower CO₂ emissions compared to conventional energy manufacturing.
           </p>
         </div>
-        <div className={styles.col}>
+        <div className={`${styles.col} col`}>
           <p>Smart Manufacturing</p>
           <h1>
-            4.0<span>ready</span>
+            {level.toFixed(1)}
+            <span>ready</span>
           </h1>
           <p>
             Automated, data-driven production ecosystems powered by IOT and AI.
           </p>
         </div>
       </section>
-      <section className={styles.specialitiesSection}>
-        <div className={styles.tab}>
-          <div className={styles.infoContainer}>
+      <section
+        className={`${styles.specialitiesSection} specialitiesSection`}
+        ref={specialitiesContainer}
+      >
+        <div className={`${styles.tab} tab`}>
+          <div className={`${styles.infoContainer} infoContainer`}>
             <h1>
               Manufacturer of sustainable <span>technologies</span>
             </h1>
@@ -172,7 +400,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className={styles.tab}>
+        <div className={`${styles.tab} tab`}>
           <div className={styles.infoContainer}>
             <h1>
               Innovator in renewable energy &amp; <span>smart systems</span>
@@ -194,42 +422,20 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.partnerContainer} id="clients">
-        <div>
-          <Image
-            src={'/images/gd goenka.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
-        <div>
-          <Image
-            src={'/images/iit.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
-        <div>
-          <Image
-            src={'/images/dmg.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
-        <div>
-          <Image
-            src={'/images/gkm.png'}
-            alt="partner"
-            width={2000}
-            height={2000}
-          />
-        </div>
+        <Marquee speed={18} gap={60}>
+          <Image src="/images/gd goenka.png" alt="" width={200} height={200} />
+          <Image src="/images/iit.png" alt="" width={200} height={200} />
+          <Image src="/images/dmg.png" alt="" width={200} height={200} />
+          <Image src="/images/gkm.png" alt="" width={200} height={200} />
+        </Marquee>
       </section>
-      <section className={styles.products} id="products">
+      <section
+        className={`${styles.products} products`}
+        id="products"
+        ref={productsContainer}
+      >
         <h1>Featured Products</h1>
-        <div className={styles.cardContainer}>
+        <div className={`${styles.cardContainer} cardContainer`}>
           <div
             onMouseEnter={() => {
               setIsHoveringProducts(0);
