@@ -125,7 +125,7 @@ export default function Testimonials() {
           </div>
           <div className={styles.infoContainer}>
             <header>
-              <p>GD Goenka</p>
+              <p>Synchronous Build Digital</p>
               <p>28 July 2023</p>
             </header>
             <h1>Devam Srivastava</h1>
@@ -147,7 +147,7 @@ export default function Testimonials() {
           </div>
           <div className={styles.infoContainer}>
             <header>
-              <p>GD Goenka</p>
+              <p>GKM Energy</p>
               <p>5 November 2022</p>
             </header>
             <h1>Gaurav Minda</h1>
