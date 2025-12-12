@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import styles from './Footer.module.css';
@@ -52,16 +52,16 @@ export default function Footer() {
               <li>AI_Drive Through</li>
             </Link>
             <Link href={'#products'}>
-              <li>REZONIX</li>
+              <li>EEDW</li>
             </Link>
             <Link href={'#products'}>
               <li>SMART HOME AUTOMATION SYSTEM</li>
             </Link>
             <Link href={'#products'}>
-              <li>IDP PORTAL</li>
+              <li>DamChat</li>
             </Link>
             <Link href={'#products'}>
-              <li>SMART EV INTEGRATION</li>
+              <li>Vehicle Tracking</li>
             </Link>
             <Link href={'#products'}>
               <li>BULK ATTENDANCE SYSTEM</li>

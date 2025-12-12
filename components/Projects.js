@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import styles from './Projects.module.css';
 import { useEffect, useRef, useState } from 'react';
@@ -219,8 +219,8 @@ export default function Projects() {
         {
           y: 0,
           opacity: 1,
-          stagger: 0.1,
-          duration: 0.8,
+          stagger: 0.2,
+          duration: 1.2,
           ease: 'power2.out()',
           scrollTrigger: {
             trigger: container.current,
@@ -276,13 +276,13 @@ export default function Projects() {
             <div></div>
           </div>
           <div>
-            <h1>SMART HOME AUTOMATION</h1>
-            <p>(GKM Energy)</p>
+            <h1>Weighbridge AI</h1>
+            <p>(DMG, Rajasthan)</p>
             <div></div>
           </div>
           <div>
-            <h1>IDP PORTAL</h1>
-            <p>(GD Goenka University)</p>
+            <h1>DamChat</h1>
+            <p>(ICED, IIT Roorkee)</p>
             <div></div>
           </div>
           <div>
@@ -308,7 +308,7 @@ export default function Projects() {
             <div></div>
           </div>
           <div>
-            <h1>SMART EV INTEGRATION</h1>
+            <h1>Vehicle Tracking</h1>
             <p>(GKM Energy)</p>
             <div></div>
           </div>
