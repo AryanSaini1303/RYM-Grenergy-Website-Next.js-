@@ -44,12 +44,11 @@ export default function Projects() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.fromTo(
+      gsap.from(
         '.chartContainer .row h1, .chartContainer .row p ',
-        { y: 10, opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
+          y: 10,
+          opacity: 0,
           stagger: 0.2,
           duration: 1.2,
           ease: 'power2.out()',
