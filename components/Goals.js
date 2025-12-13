@@ -26,7 +26,7 @@ export default function Goals() {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: container.current,
-          start: 'top 55%',
+          start: 'top 65%',
           toggleActions: 'play none none reverse',
           // markers:true
         },
@@ -50,7 +50,7 @@ export default function Goals() {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: container.current,
-          start: 'top 55%',
+          start: 'top 65%',
           toggleActions: 'play none none reverse',
           // markers:true
         },
