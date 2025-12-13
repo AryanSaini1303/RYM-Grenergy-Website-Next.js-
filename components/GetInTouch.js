@@ -3,12 +3,7 @@
 import styles from './GetInTouch.module.css';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
 
 export default function GetInTouch() {
   const [formData, setFormData] = useState({

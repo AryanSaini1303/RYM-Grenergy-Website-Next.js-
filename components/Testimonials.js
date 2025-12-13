@@ -5,12 +5,7 @@ import styles from './Testimonials.module.css';
 import KnowMoreButton from './KnowMoreButton';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
 
 export default function Testimonials() {
   const container = useRef(null);
@@ -43,6 +38,7 @@ export default function Testimonials() {
             toggleActions: 'play none none reverse',
             // markers: true,
           },
+          lazy: false,
         },
       );
     },
@@ -70,6 +66,7 @@ export default function Testimonials() {
             toggleActions: 'play none none reverse',
             // markers: true,
           },
+          lazy: false,
         },
       );
     },

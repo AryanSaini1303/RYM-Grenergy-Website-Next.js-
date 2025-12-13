@@ -15,14 +15,14 @@ import Footer from '@/components/Footer';
 import MobileBlocker from '@/components/MobileBlocker';
 import { useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Marquee from '@/components/Marquee';
 
 // Register plugins once
-if (typeof window !== 'undefined') {
+// if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
+// }
 
 const data = [
   {
@@ -235,6 +235,32 @@ export default function Home() {
     () => {
       if (isMobile) return;
       gsap.fromTo(
+        '.specialitiesSection .tab:nth-child(2) img',
+        { x: -50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: specialitiesContainer.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+            // markers: true,
+          },
+        },
+      );
+    },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: specialitiesContainer,
+    },
+  );
+
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      gsap.fromTo(
         '.specialitiesSection .tab .infoContainer',
         { y: 50, opacity: 0 },
         {
@@ -267,6 +293,7 @@ export default function Home() {
           y: 0,
           opacity: 1,
           duration: 1,
+          stagger:0.1,
           ease: 'power2.out()',
           scrollTrigger: {
             trigger: productsContainer.current,

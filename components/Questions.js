@@ -5,12 +5,7 @@ import styles from './Questions.module.css';
 import { useEffect, useRef, useState } from 'react';
 import { Accordion, AccordionItem } from '@heroui/accordion';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
 
 export default function Questions() {
   const headings = [
