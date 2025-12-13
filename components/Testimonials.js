@@ -162,7 +162,7 @@ export default function Testimonials() {
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
             <Image
-              src={'/images/apeksha.jpg'}
+              src={'/images/apk.jpg'}
               alt={'testimonials'}
               width={2000}
               height={20000}
