@@ -197,7 +197,7 @@ export default function Home() {
           toggleActions: 'play none none reverse',
         },
       });
-      tl.from('.specialitiesSection .tab img', {
+      tl.from('.specialitiesSection .tab:nth-child(1) img', {
         x: 50,
         opacity: 0,
         duration: 0.8,

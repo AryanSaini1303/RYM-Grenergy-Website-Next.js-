@@ -2,8 +2,6 @@
 
 import Image from 'next/image';
 import styles from './Achievements.module.css';
-import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
 import KnowMoreButton from './KnowMoreButton';
 import { useEffect, useRef, useState } from 'react';
 
@@ -19,46 +17,11 @@ export default function Achievements() {
     return () => window.removeEventListener('resize', checkWidth);
   }, []);
 
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 60%',
-          toggleActions: 'play none none reverse',
-          // markers: true,
-        },
-      });
-      tl.from('.achievements .gridContainer .tabs:first-of-type', {
-        y: 100,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-      });
-      tl.from(
-        '.achievements .gridContainer .tabs:not(:first-of-type)',
-        {
-          opacity: 0,
-          stagger: 0.2,
-          duration: 0.6,
-          ease: 'power2.out',
-        },
-        '<+=0.1', // start shortly after first tab begins
-      );
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
   return (
     <section className={`${styles.achievements} achievements`} ref={container}>
       <h1>Latest Achievements</h1>
       <div className={`${styles.gridContainer} gridContainer`}>
-        <div className={`${styles.tabs} tabs`}>
+        <div className={`${styles.tabs} .tabs`}>
           <div className={styles.imageContainer}>
             <Image
               src={'/images/kpit.png'}
