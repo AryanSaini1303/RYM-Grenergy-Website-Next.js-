@@ -21,68 +21,44 @@ export default function Projects() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.from('.chartContainer .row div div', {
-        height: 0,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: 'power2.out()',
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
           start: 'top 55%',
           toggleActions: 'play none none reverse',
+          // markers: true,
         },
       });
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.from(
-        '.chartContainer .row h1, .chartContainer .row p ',
+      // Animations execute in the given order
+      tl.from('.chartContainer .centerSection', {
+        scaleX: 0,
+        opacity: 0,
+        transformOrigin: 'left',
+        duration: 1,
+        ease: 'power2.out',
+      });
+      tl.from(
+        '.chartContainer .row div div',
+        {
+          scaleY: 0,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 1,
+          ease: 'power2.out',
+        },
+        '<', // start at same time as previous
+      );
+      tl.from(
+        '.chartContainer .row h1, .chartContainer .row p',
         {
           y: 10,
           opacity: 0,
           stagger: 0.2,
-          duration: 1.2,
-          ease: 'power2.out()',
-          scrollTrigger: {
-            trigger: container.current,
-            start: 'top 55%',
-            toggleActions: 'play none none reverse',
-            // markers:true
-          },
+          duration: 1,
+          ease: 'power2.out',
         },
+        '<',
       );
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.from('.chartContainer .centerSection', {
-        width: 0,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 55%',
-          toggleActions: 'play none none reverse',
-        },
-      });
     },
     {
       revertOnUpdate: true,
@@ -147,3 +123,8 @@ export default function Projects() {
     </section>
   );
 }
+
+// '<’ = start at the same time as previous
+// '>’ = start after previous ends
+// '<+=0.2' = start 0.2s after previous starts
+// '-=0.3' = start 0.3s before previous ends

@@ -20,9 +20,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Marquee from '@/components/Marquee';
 
 // Register plugins once
-// if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
-// }
+}
 
 const data = [
   {
@@ -141,44 +141,28 @@ export default function Home() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.fromTo(
-        '.aboutSection .infoContainer',
-        { y: 200, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            // markers:true,
-            trigger: aboutContainer.current,
-            start: 'top 80%',
-            // end: 'bottom 10%',
-            // scrub: true,
-            toggleActions: 'play none none reverse',
-          },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: aboutContainer.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
-      );
-    },
-    { revertOnUpdate: true, dependencies: [isMobile] },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.fromTo(
+      });
+      tl.from('.aboutSection .infoContainer', {
+        y: 200,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out',
+      });
+      tl.from(
         '.imageContainer',
-        { x: 200, opacity: 0 },
         {
-          x: 0,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            // markers:true,
-            trigger: aboutContainer.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
+          x: 200,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.out',
         },
+        '<',
       );
     },
     { revertOnUpdate: true, dependencies: [isMobile] },
@@ -187,20 +171,18 @@ export default function Home() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.fromTo(
-        '.statsContainer .col',
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: aboutContainer.current,
-            start: 'top 10%',
-            toggleActions: 'play none none reverse',
-          },
+      gsap.from('.statsContainer .col', {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: aboutContainer.current,
+          start: 'top 10%',
+          toggleActions: 'play none none reverse',
         },
-      );
+      });
     },
     { revertOnUpdate: true, dependencies: [isMobile], scope: statsContainer },
   );
@@ -208,72 +190,38 @@ export default function Home() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.fromTo(
-        '.specialitiesSection .tab img',
-        { x: 50, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: specialitiesContainer.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-            // markers: true,
-          },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: specialitiesContainer.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
-      );
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: specialitiesContainer,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.fromTo(
+      });
+      tl.from('.specialitiesSection .tab img', {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      });
+      tl.from(
         '.specialitiesSection .tab:nth-child(2) img',
-        { x: -50, opacity: 0 },
         {
-          x: 0,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: specialitiesContainer.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-            // markers: true,
-          },
+          x: -50,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
         },
+        '<',
       );
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: specialitiesContainer,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.fromTo(
+      tl.from(
         '.specialitiesSection .tab .infoContainer',
-        { y: 50, opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: specialitiesContainer.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-            // markers: true,
-          },
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
         },
+        '<',
       );
     },
     {
@@ -286,23 +234,18 @@ export default function Home() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.fromTo(
-        '.products .cardContainer div',
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger:0.1,
-          ease: 'power2.out()',
-          scrollTrigger: {
-            trigger: productsContainer.current,
-            start: 'top 55%',
-            toggleActions: 'play none none reverse',
-            // markers: true,
-          },
+      gsap.from('.products .cardContainer div', {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: productsContainer.current,
+          start: 'top 55%',
+          toggleActions: 'play none none reverse',
         },
-      );
+      });
     },
     {
       revertOnUpdate: true,

@@ -22,49 +22,36 @@ export default function Achievements() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.fromTo(
-        '.achievements .gridContainer .tabs:nth-child(1)',
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            // markers: true,
-            trigger: container.current,
-            start: 'top 60%',
-            // end: 'bottom 10%',
-            // scrub: true,
-            toggleActions: 'play none none reverse',
-          },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 60%',
+          toggleActions: 'play none none reverse',
+          // markers: true,
         },
-      );
-    },
-    { revertOnUpdate: true, dependencies: [isMobile], scope: container },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.fromTo(
+      });
+      tl.from('.achievements .gridContainer .tabs:first-of-type', {
+        y: 100,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      });
+      tl.from(
         '.achievements .gridContainer .tabs:not(:first-of-type)',
-        { opacity: 0 },
         {
-          opacity: 1,
+          opacity: 0,
           stagger: 0.2,
+          duration: 0.6,
           ease: 'power2.out',
-          scrollTrigger: {
-            // markers: true,
-            trigger: container.current,
-            start: 'top 5%',
-            // end: 'bottom 10%',
-            // scrub: true,
-            toggleActions: 'play none none reverse',
-          },
         },
+        '<+=0.1', // start shortly after first tab begins
       );
     },
-    { revertOnUpdate: true, dependencies: [isMobile], scope: container },
+    {
+      revertOnUpdate: true,
+      dependencies: [isMobile],
+      scope: container,
+    },
   );
 
   return (

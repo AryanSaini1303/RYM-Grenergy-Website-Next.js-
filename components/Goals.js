@@ -13,43 +13,31 @@ export default function Goals() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.from('.imageContainer img', {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 65%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+      tl.from('.imageContainer img', {
         scale: 0,
         opacity: 0,
         duration: 0.8,
         stagger: 0.1,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 65%',
-          toggleActions: 'play none none reverse',
-          // markers:true
-        },
       });
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.from('.infoContainer  *', {
-        x: -20,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 65%',
-          toggleActions: 'play none none reverse',
-          // markers:true
+      tl.from(
+        '.infoContainer *',
+        {
+          x: -20,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: 'power2.out',
         },
-      });
+        '<',
+      );
     },
     {
       revertOnUpdate: true,

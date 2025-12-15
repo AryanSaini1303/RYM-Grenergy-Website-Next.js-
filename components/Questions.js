@@ -39,67 +39,43 @@ export default function Questions() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.from('.accordionContainer div div', {
-        y: 0,
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+      tl.from('.accordionContainer div div', {
+        y: 20,
         opacity: 0,
         duration: 0.8,
         stagger: 0.1,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-          // markers:true
-        },
       });
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.from('.accordionContainer div hr', {
-        width: 0,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-          // markers:true
+      tl.from(
+        '.accordionContainer div hr',
+        {
+          scaleX: 0,
+          opacity: 0,
+          transformOrigin: 'left',
+          duration: 0.5,
+          stagger: 0.1,
+          ease: 'power2.out',
         },
-      });
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.from('.questionsContainer header', {
-        x: -20,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-          // markers:true
+        '<',
+      );
+      tl.from(
+        '.questionsContainer header',
+        {
+          x: -20,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.1,
+          ease: 'power2.out',
         },
-      });
+        '<',
+      );
     },
     {
       revertOnUpdate: true,

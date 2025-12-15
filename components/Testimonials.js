@@ -24,50 +24,40 @@ export default function Testimonials() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.fromTo(
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 100%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+      tl.from(
         '.gridContainer div:nth-child(2), .gridContainer div:nth-child(5)',
-        { y: 50, opacity: 0 },
         {
-          y: -90,
-          opacity: 1,
+          y: 50,
+          opacity: 0,
           duration: 1,
-          ease: 'power2.out()',
-          scrollTrigger: {
-            trigger: container.current,
-            start: 'top 100%',
-            toggleActions: 'play none none reverse',
-            // markers: true,
-          },
-          lazy: false,
+          ease: 'power2.out',
         },
       );
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.fromTo(
-        '.gridContainer div:not(:nth-child(2)):not(:nth-child(5))',
-        { y: 50, opacity: 0 },
+      tl.to(
+        '.gridContainer div:nth-child(2), .gridContainer div:nth-child(5)',
         {
-          y: 0,
-          opacity: 1,
+          y: -90,
           duration: 1,
-          ease: 'power2.out()',
-          scrollTrigger: {
-            trigger: container.current,
-            start: 'top 100%',
-            toggleActions: 'play none none reverse',
-            // markers: true,
-          },
-          lazy: false,
+          ease: 'power2.out',
         },
+        '<',
+      );
+      tl.from(
+        '.gridContainer div:not(:nth-child(2)):not(:nth-child(5))',
+        {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.out',
+        },
+        '<',
       );
     },
     {

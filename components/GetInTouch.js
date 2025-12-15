@@ -27,43 +27,31 @@ export default function GetInTouch() {
   useGSAP(
     () => {
       if (isMobile) return;
-      gsap.from('.formContainer input', {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+      tl.from('.formContainer input', {
         y: -30,
         opacity: 0,
         duration: 1,
         stagger: 0.1,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-          // markers:true
-        },
       });
-    },
-    {
-      revertOnUpdate: true,
-      dependencies: [isMobile],
-      scope: container,
-    },
-  );
-
-  useGSAP(
-    () => {
-      if (isMobile) return;
-      gsap.from('.infoContainer *', {
-        x: -50,
-        opacity: 0,
-        duration: 2,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-          // markers:true
+      tl.from(
+        '.infoContainer *',
+        {
+          x: -50,
+          opacity: 0,
+          duration: 2,
+          stagger: 0.1,
+          ease: 'power2.out',
         },
-      });
+        '<',
+      );
     },
     {
       revertOnUpdate: true,
