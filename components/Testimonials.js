@@ -80,12 +80,7 @@ export default function Testimonials() {
       <div className={`${styles.gridContainer} gridContainer`}>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/arc.jpeg'}
-              alt={'testimonials'}
-              width={2000}
-              height={20000}
-            />
+            <img src={'/images/arc.jpeg'} alt={'testimonials'} />
           </div>
           <div className={styles.infoContainer}>
             <header>
@@ -103,12 +98,7 @@ export default function Testimonials() {
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/devam.jpg'}
-              alt={'testimonials'}
-              width={2000}
-              height={20000}
-            />
+            <img src={'/images/devam.jpg'} alt={'testimonials'} />
           </div>
           <div className={styles.infoContainer}>
             <header>
@@ -125,12 +115,7 @@ export default function Testimonials() {
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/gaurav.jpg'}
-              alt={'testimonials'}
-              width={2000}
-              height={20000}
-            />
+            <img src={'/images/gaurav.jpg'} alt={'testimonials'} />
           </div>
           <div className={styles.infoContainer}>
             <header>
@@ -148,12 +133,7 @@ export default function Testimonials() {
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/apk.jpg'}
-              alt={'testimonials'}
-              width={2000}
-              height={20000}
-            />
+            <img src={'/images/apk.jpg'} alt={'testimonials'} />
           </div>
           <div className={styles.infoContainer}>
             <header>
@@ -171,12 +151,7 @@ export default function Testimonials() {
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/dh.jpeg'}
-              alt={'testimonials'}
-              width={2000}
-              height={20000}
-            />
+            <img src={'/images/dh.jpeg'} alt={'testimonials'} />
           </div>
           <div className={styles.infoContainer}>
             <header>
@@ -193,12 +168,7 @@ export default function Testimonials() {
         </div>
         <div className={styles.tabs}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/adi.png'}
-              alt={'testimonials'}
-              width={2000}
-              height={20000}
-            />
+            <img src={'/images/adi.png'} alt={'testimonials'} />
           </div>
           <div className={styles.infoContainer}>
             <header>

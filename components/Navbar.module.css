@@ -79,7 +79,7 @@
 .active::before {
   content: '';
   position: absolute;
-  width: 100%;
+  /* width: 100%; */
   background-color: var(--highlight-color);
   height: 2px;
   bottom: 0;

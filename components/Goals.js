@@ -73,11 +73,11 @@ export default function Goals() {
         </p>
       </div>
       <div className={`${styles.imageContainer} imageContainer`}>
-        <Image src={'/images/sdg1.png'} alt="sdg" width={2000} height={2000} />
-        <Image src={'/images/sdg2.png'} alt="sdg" width={2000} height={2000} />
-        <Image src={'/images/sdg3.png'} alt="sdg" width={2000} height={2000} />
-        <Image src={'/images/sdg4.png'} alt="sdg" width={2000} height={2000} />
-        <Image src={'/images/sdg5.png'} alt="sdg" width={2000} height={2000} />
+        <img src={'/images/sdg1.png'} alt="sdg" />
+        <img src={'/images/sdg2.png'} alt="sdg" />
+        <img src={'/images/sdg3.png'} alt="sdg" />
+        <img src={'/images/sdg4.png'} alt="sdg" />
+        <img src={'/images/sdg5.png'} alt="sdg" />
       </div>
     </section>
   );

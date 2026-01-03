@@ -127,6 +127,7 @@
   align-items: center;
   gap: 2.5rem;
   margin: 5rem 0;
+  overflow: hidden;
 }
 
 .infoContainer {
@@ -738,7 +739,7 @@
     margin: 3rem 1.5rem;
     gap: 3rem;
   }
-  .specialitiesSection .tab{
+  .specialitiesSection .tab {
     gap: 1rem;
   }
   .specialitiesSection .tab .infoContainer h1 {

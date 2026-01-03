@@ -276,12 +276,10 @@ export default function Home() {
             const isActive = index === counter;
             const isPrev = index === prevCounter;
             return (
-              <Image
+              <img
                 key={item.id}
                 src={item.image}
                 alt={item.title}
-                width={10000}
-                height={10000}
                 className={`
                 ${styles.heroImage}
                 ${isActive ? styles.activeSlide : ''}
@@ -311,11 +309,9 @@ export default function Home() {
           </p>
         </div>
         <div className={`${styles.imageContainer} imageContainer`}>
-          <Image
+          <img
             src={'/images/img1.jpeg'}
             alt="Section Image"
-            width={1000}
-            height={1000}
           />
         </div>
       </section>
@@ -362,11 +358,9 @@ export default function Home() {
             <button className={styles.knowMoreBtn}>Know more</button>
           </div>
           <div className={styles.imageContainer}>
-            <Image
+            <img
               src={'/images/ev.jpeg'}
               alt="EV Charging"
-              height={2000}
-              width={2000}
             />
           </div>
         </div>
@@ -382,21 +376,19 @@ export default function Home() {
             <button className={styles.knowMoreBtn}>Know more</button>
           </div>
           <div className={styles.imageContainer}>
-            <Image
+            <img
               src={'/images/processor.jpeg'}
               alt="Processors"
-              height={2000}
-              width={2000}
             />
           </div>
         </div>
       </section>
       <section className={styles.partnerContainer} id="clients">
         <Marquee speed={18} gap={60}>
-          <Image src="/images/gd goenka.png" alt="" width={200} height={200} />
-          <Image src="/images/iit.png" alt="" width={200} height={200} />
-          <Image src="/images/dmg.png" alt="" width={200} height={200} />
-          <Image src="/images/gkm.png" alt="" width={200} height={200} />
+          <img src="/images/gd goenka.png" alt="gd goenka" />
+          <img src="/images/iit.png" alt="iit" />
+          <img src="/images/dmg.png" alt="dmg" />
+          <img src="/images/gkm.png" alt="gkm" />
         </Marquee>
       </section>
       <section
@@ -416,11 +408,9 @@ export default function Home() {
           >
             <h1>Ultron</h1>
             <div className={styles.imageContainer}>
-              <Image
+              <img
                 src={'/images/product4.jpeg'}
                 alt="product"
-                width={2000}
-                height={2000}
               />
               {isHoveringProducts === 0 && (
                 <p>
@@ -449,11 +439,9 @@ export default function Home() {
           >
             <h1>AI-Drive Through</h1>
             <div className={styles.imageContainer}>
-              <Image
+              <img
                 src={'/images/product1.jpeg'}
                 alt="product"
-                width={2000}
-                height={2000}
               />
               {isHoveringProducts === 1 && (
                 <p>
@@ -478,11 +466,9 @@ export default function Home() {
           >
             <h1>REEWS</h1>
             <div className={styles.imageContainer}>
-              <Image
+              <img
                 src={'/images/product3.png'}
                 alt="product"
-                width={2000}
-                height={2000}
               />
               {isHoveringProducts === 2 && (
                 <p>

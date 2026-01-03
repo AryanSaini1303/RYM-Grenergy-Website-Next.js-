@@ -23,12 +23,7 @@ export default function Achievements() {
       <div className={`${styles.gridContainer} gridContainer`}>
         <div className={`${styles.tabs} .tabs`}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/kpit.png'}
-              width={2000}
-              height={2000}
-              alt="Achievement Image"
-            />
+            <img src={'/images/kpit.png'} alt="Achievement Image" />
           </div>
           <div className={styles.infoContainer}>
             <h5>Recognition</h5>
@@ -42,12 +37,7 @@ export default function Achievements() {
         </div>
         <div className={`${styles.tabs} tabs`}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/journey.png'}
-              width={2000}
-              height={2000}
-              alt="Achievement Image"
-            />
+            <img src={'/images/journey.png'} alt="Achievement Image" />
           </div>
           <div className={styles.infoContainer}>
             <h5>Awards</h5>
@@ -56,12 +46,7 @@ export default function Achievements() {
         </div>
         <div className={`${styles.tabs} tabs`}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/ultron.jpeg'}
-              width={2000}
-              height={2000}
-              alt="Achievement Image"
-            />
+            <img src={'/images/ultron.jpeg'} alt="Achievement Image" />
           </div>
           <div className={styles.infoContainer}>
             <h5>Blog</h5>
@@ -70,12 +55,7 @@ export default function Achievements() {
         </div>
         <div className={`${styles.tabs} tabs`}>
           <div className={styles.imageContainer}>
-            <Image
-              src={'/images/innovation.jpg'}
-              width={2000}
-              height={2000}
-              alt="Achievement Image"
-            />
+            <img src={'/images/innovation.jpg'} alt="Achievement Image" />
           </div>
           <div className={styles.infoContainer}>
             <h5>Innovation</h5>

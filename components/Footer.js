@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <section className={styles.footerContainer}>
       <div className={styles.leftSection}>
-        <Image src={'/images/logo.png'} width={2000} height={2000} alt="Logo" />
+        <img src={'/images/logo.png'} alt="Logo" />
         <div className={styles.paraContainer}>
           <p>Gurugram, NCR, India</p>
           <p>+91-82000-55645</p>
